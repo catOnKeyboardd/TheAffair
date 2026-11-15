@@ -11,6 +11,11 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
+## Deploy (GitHub Pages)
+
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds a static export (`out/`) and publishes it.
+One-time setup: repo Settings → Pages → Source: **GitHub Actions**. Site: `https://<user>.github.io/TheAffair/`.
+
 ## Who owns what (stay in your files = no merge conflicts)
 
 | Who     | Branch                  | Files                                              |

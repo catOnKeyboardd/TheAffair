@@ -3,9 +3,20 @@ import datesRaw from "@/data/dates.json";
 import locationsRaw from "@/data/locations.json";
 import type { DateSim, Location, Persona } from "./types";
 
-export const personas = raw as unknown as Persona[];
+// JSON paths like "/wife.jpg" are relative to public/; the site may live under a sub-path (GitHub Pages)
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const asset = <T extends string | undefined>(src: T): T => (src?.startsWith("/") ? `${base}${src}` : src) as T;
+
+export const personas = (raw as unknown as Persona[]).map((p) => ({
+  ...p,
+  avatar: asset(p.avatar),
+  avatarStages: p.avatarStages?.map((st) => ({ ...st, src: asset(st.src) })),
+  items: p.items.map((it) => (it.kind === "photo" ? { ...it, src: asset(it.src) } : it)),
+}));
 const dates = datesRaw as unknown as Record<string, DateSim>;
-export const locations = locationsRaw as Record<string, Location>;
+export const locations = Object.fromEntries(
+  Object.entries(locationsRaw as Record<string, Location>).map(([k, l]) => [k, { ...l, image: asset(l.image) }]),
+);
 
 // Catch typos early (shows up as an error overlay in `npm run dev`)
 const fail = (msg: string) => {
