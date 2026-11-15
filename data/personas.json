@@ -399,7 +399,7 @@
               "them": [
                 "Um ok..."
               ],
-              "location": "washroom"
+              "location": "gracehopper"
             },
             {
               "me": "Yessirr",
@@ -413,7 +413,100 @@
         }
       }
     },
-    "avatar": "/person4.svg",
-    "lookingFor": "Something discreet 🤫"
+    "avatar": "/intern.svg",
+    "lookingFor": "Something discreet 🤫",
+    "date": {
+      "intro": "In-person coffee chat, Grace Hopper meeting room. Jensen thinks it's a secret date. It is not.",
+      "rounds": [
+        {
+          "scene": "☕ Coffee chat, Grace Hopper room. The Mystery 3rd sets down two oat lattes and takes off the fedora. It's… the summer intern. \"Hi!! I made a 12-slide deck on why I deserve a return offer.\"",
+          "options": [
+            {
+              "text": "\"Let's see the deck.\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "SLIDE ONE: me 🥹"
+            },
+            {
+              "text": "\"Who let you into this building?\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "my badge says 'intern (temp)'…"
+            },
+            {
+              "text": "Hand them a return offer on the spot",
+              "heart": 1,
+              "stock": -1,
+              "reply": "OMG. wait, is this legal?"
+            },
+            {
+              "text": "\"Do you know who I am?\"",
+              "heart": -1,
+              "stock": 0,
+              "reply": "the leather jacket guy from all-hands!"
+            }
+          ]
+        },
+        {
+          "scene": "📱 The intern sips their latte. \"Can I take a selfie with you for LinkedIn? It's for my personal brand.\"",
+          "options": [
+            {
+              "text": "\"Sure, tag me.\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "'Humbled and honored to announce…' 🙏"
+            },
+            {
+              "text": "\"Absolutely not. NDA.\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "…it was gonna be a tasteful selfie"
+            },
+            {
+              "text": "Write the caption yourself",
+              "heart": 1,
+              "stock": -1,
+              "reply": "'Excited to share our next-gen chip'… wait, you can't post that"
+            },
+            {
+              "text": "Give career advice instead",
+              "heart": 1,
+              "stock": 0,
+              "reply": "'the more you buy, the more you save'… noted 📝"
+            }
+          ]
+        },
+        {
+          "scene": "⏰ The lattes are empty. \"So… are we doing this again? Like, full-time?\"",
+          "options": [
+            {
+              "text": "\"Same time next week? Coffee's on me.\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "this is the best coffee chat of my life"
+            },
+            {
+              "text": "\"Talk to HR.\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "…HR told me to talk to you"
+            },
+            {
+              "text": "Give them RSUs",
+              "heart": 1,
+              "stock": -1,
+              "reply": "I'M RICH (on paper)"
+            },
+            {
+              "text": "Leave them on read",
+              "heart": -1,
+              "stock": 0,
+              "reply": "Seen 4:52 PM"
+            }
+          ]
+        }
+      ]
+    },
+    "dateName": "The Intern"
   }
 ]

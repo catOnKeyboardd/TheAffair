@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- The Intern (revealed Mystery 3rd): eager summer intern, app cartoon style -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#fff4c2"/>
+      <stop offset="100%" stop-color="#ffd42e"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <!-- sparkles of enthusiasm -->
+  <g fill="#ffffff" stroke="#30323b" stroke-width="4" stroke-linejoin="round">
+    <path d="M58 96 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z"/>
+    <path d="M338 70 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6z"/>
+  </g>
+  <g stroke="#30323b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- hoodie body -->
+    <path d="M56 500 C60 410 112 350 200 350 C288 350 340 410 344 500 Z" fill="#7de5e9"/>
+    <!-- hood behind neck -->
+    <path d="M140 356 C150 330 250 330 260 356 C240 372 160 372 140 356 Z" fill="#5fc9cd"/>
+    <!-- hoodie strings -->
+    <path d="M182 368 v46 M218 368 v46" fill="none" stroke-width="5"/>
+    <!-- backpack straps -->
+    <path d="M110 380 C118 420 120 460 118 500 M290 380 C282 420 280 460 282 500" fill="none" stroke="#ff2f61" stroke-width="12"/>
+    <!-- neck -->
+    <rect x="180" y="296" width="40" height="48" fill="#d9a07a"/>
+    <!-- head -->
+    <ellipse cx="200" cy="214" rx="78" ry="86" fill="#e8b48e"/>
+    <!-- messy short hair -->
+    <path d="M122 206 C112 150 146 112 200 110 C256 112 290 150 278 206 C268 186 258 178 246 176 C252 160 240 150 230 156 C222 140 206 142 200 154 C190 140 172 144 170 160 C158 152 144 162 150 178 C138 180 128 190 122 206 Z" fill="#3b2a20"/>
+  </g>
+  <!-- huge eager eyes -->
+  <circle cx="168" cy="214" r="16" fill="#ffffff" stroke="#30323b" stroke-width="5"/>
+  <circle cx="232" cy="214" r="16" fill="#ffffff" stroke="#30323b" stroke-width="5"/>
+  <circle cx="171" cy="217" r="8" fill="#30323b"/>
+  <circle cx="235" cy="217" r="8" fill="#30323b"/>
+  <circle cx="174" cy="213" r="3" fill="#ffffff"/>
+  <circle cx="238" cy="213" r="3" fill="#ffffff"/>
+  <!-- eyebrows raised -->
+  <path d="M150 186 C160 178 176 178 184 184 M216 184 C224 178 240 178 250 186" fill="none" stroke="#3b2a20" stroke-width="5" stroke-linecap="round"/>
+  <!-- big open nervous smile -->
+  <path d="M170 254 C182 282 218 282 230 254 Z" fill="#ffffff" stroke="#30323b" stroke-width="6" stroke-linejoin="round"/>
+  <!-- sweat drop -->
+  <path d="M276 176 q8 14 0 20 q-8 -6 0 -20z" fill="#7de5e9" stroke="#30323b" stroke-width="3"/>
+  <!-- lanyard + INTERN badge -->
+  <path d="M176 352 L200 418 L224 352" fill="none" stroke="#76b900" stroke-width="7"/>
+  <rect x="160" y="416" width="80" height="40" rx="8" fill="#ffffff" stroke="#30323b" stroke-width="6"/>
+  <text x="200" y="443" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="18" font-weight="900" fill="#30323b">INTERN</text>
+  <!-- latte in hand -->
+  <g stroke="#30323b" stroke-width="6" stroke-linejoin="round">
+    <path d="M300 404 h46 l-6 64 h-34z" fill="#f7f0e6"/>
+    <rect x="296" y="394" width="54" height="14" rx="5" fill="#8a4b2a"/>
+    <rect x="304" y="428" width="38" height="18" fill="#ff2f61"/>
+  </g>
+</svg>

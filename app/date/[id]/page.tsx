@@ -137,7 +137,7 @@ export default function DateSim() {
             {picked
               ? "…"
               : (current?.scene ??
-                (round === 0 ? `Your date with ${persona.name} begins. Make it count.` : "Your move."))}
+                (round === 0 ? `Your date with ${persona.dateName ?? persona.name} begins. Make it count.` : "Your move."))}
           </div>
         )}
         <div className={s.avatarWrap}>
@@ -164,7 +164,7 @@ export default function DateSim() {
             </div>
           )}
         </div>
-        <div className={s.name}>{persona.name}</div>
+        <div className={s.name}>{persona.dateName ?? persona.name}</div>
       </div>
 
       {delta && (

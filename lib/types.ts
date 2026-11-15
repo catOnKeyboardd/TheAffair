@@ -43,6 +43,7 @@ export type Persona = {
   bio: string; // shown on the swipe card
   lookingFor?: string; // "Looking for: ..." chip on the swipe card
   avatar?: string; // date sim portrait, e.g. "/person1.jpg"
+  dateName?: string; // name shown in the date sim if different (e.g. a reveal)
   // Optional glow-up looks for the date sim (worst -> best). glowUp options move up one stage.
   // filter is a CSS filter for placeholder looks; drop it once a real image is in place.
   avatarStages?: { src: string; filter?: string }[];
