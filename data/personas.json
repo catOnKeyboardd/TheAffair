@@ -2,9 +2,9 @@
   {
     "id": "wife",
     "name": "The Wife",
-    "location": "Home",
-    "job": "Makes a mean meatloaf",
-    "bio": "Dinner's at 7. Don't be late. (Placeholder bio - Raymond)",
+    "location": "Home (where YOU should be)",
+    "job": "Electrical engineer",
+    "bio": "Engineer. Married 30+ years to a man who's married to his GPUs. Dinner's at 7. I can see your location.",
     "items": [
       {
         "id": "wife-p1",
@@ -47,14 +47,16 @@
         }
       }
     },
-    "avatar": "/person1.svg"
+    "avatar": "/person1.svg",
+    "age": 59,
+    "lookingFor": "Long-term (apparently I already have one?)"
   },
   {
     "id": "spy",
     "name": "Alice",
-    "location": "Taipei",
-    "job": "Definitely not a spy",
-    "bio": "Just a normal girl who loves long walks and your product roadmap. (Placeholder bio - Raymond)",
+    "location": "Taipei · 0 miles away, always",
+    "job": "Into chips 🍟 (not those ones)",
+    "bio": "Megaspeed enthusiast 🚀 Love night markets, long walks and export licenses. Definitely not a spy 😇",
     "items": [
       {
         "id": "spy-p1",
@@ -210,14 +212,16 @@
           ]
         }
       ]
-    }
+    },
+    "age": 31,
+    "lookingFor": "Short-term. Like, one data transfer."
   },
   {
     "id": "vp",
     "name": "The VP",
-    "location": "Santa Clara",
+    "location": "Santa Clara · same building",
     "job": "VP, reports directly to you",
-    "bio": "Let's take this offline. (Placeholder bio - Raymond)",
+    "bio": "I can see your calendar, and I already blocked us an hour. HR doesn't need to know. Let's take this offline.",
     "items": [
       {
         "id": "vp-p1",
@@ -259,14 +263,16 @@
         }
       }
     },
-    "avatar": "/person3.svg"
+    "avatar": "/person3.svg",
+    "age": 41,
+    "lookingFor": "Something 1:1"
   },
   {
     "id": "third",
     "name": "The Mystery 3rd",
-    "location": "3rd floor",
+    "location": "3rd floor, washroom-adjacent",
     "job": "???",
-    "bio": "You don't know me. Yet. (Placeholder bio - Raymond)",
+    "bio": "You don't know me. I know you. Your badge photo is cute.",
     "items": [
       {
         "id": "third-p1",
@@ -317,6 +323,7 @@
         }
       }
     },
-    "avatar": "/person4.svg"
+    "avatar": "/person4.svg",
+    "lookingFor": "Something discreet 🤫"
   }
 ]

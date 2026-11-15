@@ -138,7 +138,10 @@ export default function ProfileDeck({ personas, onLike, onSkip }: Props) {
             {persona.name}
             {persona.age ? `, ${persona.age}` : ""}
           </h1>
-          <div className={s.job}>{persona.job}</div>
+          <div className={s.job}>
+            💼 {persona.job} · 📍 {persona.location}
+          </div>
+          {persona.lookingFor && <div className={s.looking}>💘 Looking for: {persona.lookingFor}</div>}
           <p className={s.bio}>{persona.bio}</p>
         </section>
       </div>

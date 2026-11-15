@@ -177,6 +177,16 @@
   font-size: 16px;
   margin-bottom: 8px;
 }
+.looking {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  background: #ffd42e;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
 .bio {
   font-size: 15px;
   line-height: 1.35;
