@@ -98,7 +98,113 @@
         }
       }
     },
-    "avatar": "/person2.jpg"
+    "avatar": "/person2.jpg",
+    "avatarStages": [
+      {
+        "src": "/person2.jpg",
+        "filter": "grayscale(0.85) brightness(0.78) contrast(0.85) blur(0.6px)"
+      },
+      {
+        "src": "/person2.jpg"
+      },
+      {
+        "src": "/person2.jpg",
+        "filter": "saturate(1.35) brightness(1.1) contrast(1.05) drop-shadow(0 0 14px #ffd42e)"
+      }
+    ],
+    "avatarStart": 0,
+    "date": {
+      "intro": "PLACEHOLDER date for Alice (Raymond can rewrite). Every 'Sell state secrets' = glow-up, but 📈 drops.",
+      "rounds": [
+        {
+          "options": [
+            {
+              "text": "Sell state secrets 🤫",
+              "heart": 1,
+              "stock": -1,
+              "reply": "ooh… tell me more 😍",
+              "glowUp": true
+            },
+            {
+              "text": "Ask about Taipei night markets",
+              "heart": 1,
+              "stock": 0,
+              "reply": "you know the best stinky tofu spot??"
+            },
+            {
+              "text": "Ask who she really works for",
+              "heart": -1,
+              "stock": 0,
+              "reply": "…why do you ask? 🙂"
+            },
+            {
+              "text": "Talk about earnings",
+              "heart": -1,
+              "stock": 1,
+              "reply": "…cool. very cool."
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "text": "Sell state secrets 🤫",
+              "heart": 1,
+              "stock": -1,
+              "reply": "you're so generous 💋",
+              "glowUp": true
+            },
+            {
+              "text": "Order bubble tea for two",
+              "heart": 1,
+              "stock": 0,
+              "reply": "aww 🧋"
+            },
+            {
+              "text": "Check if she's wearing a wire",
+              "heart": -1,
+              "stock": 0,
+              "reply": "excuse me??"
+            },
+            {
+              "text": "Announce a new chip mid-date",
+              "heart": -1,
+              "stock": 1,
+              "reply": "are you doing a keynote right now?"
+            }
+          ]
+        },
+        {
+          "options": [
+            {
+              "text": "Sell state secrets 🤫",
+              "heart": 1,
+              "stock": -1,
+              "reply": "I think I'm falling for you ✨",
+              "glowUp": true
+            },
+            {
+              "text": "Offer your leather jacket",
+              "heart": 1,
+              "stock": 0,
+              "reply": "it's warm… and smells like ambition"
+            },
+            {
+              "text": "Leave early for a keynote",
+              "heart": -1,
+              "stock": 1,
+              "reply": "wow. ok. bye."
+            },
+            {
+              "text": "Sign her arm with a Sharpie",
+              "heart": 0,
+              "stock": 1,
+              "reply": "…thanks? I guess?"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "vp",

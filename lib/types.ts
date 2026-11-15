@@ -26,6 +26,7 @@ export type DateOption = {
   stock: number; // notches gained/lost on the 📈 bar
   reply: string; // character's speech bubble after this pick
   location?: string; // optional: switch the background (key in data/locations.json)
+  glowUp?: boolean; // advance the persona to the next avatarStages look, with sparkles
 };
 export type DateRound = { options: DateOption[] }; // 4 options each
 export type DateSim = { intro?: string; rounds: DateRound[] };
@@ -38,6 +39,10 @@ export type Persona = {
   job: string;
   bio: string; // shown on the swipe card
   avatar?: string; // date sim portrait, e.g. "/person1.jpg"
+  // Optional glow-up looks for the date sim (worst -> best). glowUp options move up one stage.
+  // filter is a CSS filter for placeholder looks; drop it once a real image is in place.
+  avatarStages?: { src: string; filter?: string }[];
+  avatarStart?: number; // which stage the date starts on (default 0)
   items: ProfileItem[]; // photos (+ optional prompts). First photo = card photo
   story: Story;
   date?: DateSim; // falls back to data/dates.json "default"

@@ -49,6 +49,8 @@ export default function DateSim() {
   const [delta, setDelta] = useState<{ key: number; text: string } | null>(null);
   const [shake, setShake] = useState<{ heart: boolean; stock: boolean }>({ heart: false, stock: false });
   const [avatarOk, setAvatarOk] = useState(true);
+  const [stage, setStage] = useState(() => getPersona(id)?.avatarStart ?? 0); // glow-up look index
+  const [sparkle, setSparkle] = useState(0); // bump to replay the sparkle burst
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
@@ -62,6 +64,8 @@ export default function DateSim() {
   const locKey = loc ?? match?.location ?? DEFAULT_LOCATION;
   const location = locations[locKey] ?? locations[DEFAULT_LOCATION];
   const bg = location.image ? `url(${location.image}), ${location.gradient}` : location.gradient;
+  const look = persona.avatarStages?.[stage];
+  const avatarSrc = look?.src ?? persona.avatar;
 
   const later = (ms: number, fn: () => void) => timers.current.push(setTimeout(fn, ms));
 
@@ -78,6 +82,11 @@ export default function DateSim() {
       setStock(st);
       setBubble(o.reply);
       if (o.location) setLoc(o.location);
+      const stages = persona.avatarStages;
+      if (o.glowUp && stages && stages.length) {
+        setStage((n) => Math.min(n + 1, stages.length - 1));
+        setSparkle(Date.now());
+      }
       const d = [fmt(o.heart, "❤️"), fmt(o.stock, "📈")].filter(Boolean).join("  ");
       if (d) setDelta({ key: Date.now(), text: d });
       setShake({ heart: o.heart < 0, stock: o.stock < 0 });
@@ -124,12 +133,30 @@ export default function DateSim() {
             {picked ? "…" : round === 0 ? `Your date with ${persona.name} begins. Make it count.` : "Your move."}
           </div>
         )}
-        {persona.avatar && avatarOk ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={persona.avatar} alt={persona.name} className={s.avatar} onError={() => setAvatarOk(false)} />
-        ) : (
-          <div className={s.avatar}>{persona.name[0]}</div>
-        )}
+        <div className={s.avatarWrap}>
+          {avatarSrc && avatarOk ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={stage} // re-mount so the glow-up animation replays
+              src={avatarSrc}
+              alt={persona.name}
+              className={`${s.avatar} ${sparkle ? s.glow : ""}`}
+              style={look?.filter ? { filter: look.filter } : undefined}
+              onError={() => setAvatarOk(false)}
+            />
+          ) : (
+            <div className={s.avatar}>{persona.name[0]}</div>
+          )}
+          {sparkle > 0 && (
+            <div key={sparkle} className={s.sparkles} aria-hidden>
+              {["✨", "⭐", "✨", "💖", "✨", "⭐", "✨", "💖"].map((c, i) => (
+                <span key={i} style={{ "--i": i } as React.CSSProperties}>
+                  {c}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
         <div className={s.name}>{persona.name}</div>
       </div>
 
