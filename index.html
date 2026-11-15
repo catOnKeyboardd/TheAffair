@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,115 +6,349 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Affair</title>
 <style>
-:root{--ink:#30323b;--cream:#f7f0e6;--cyan:#7de5e9;--pink:#f45caf;--hot:#ff2f61;--yellow:#ffd42e;--green:#00d84a}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;width:100%}
-body{min-height:100svh;display:grid;place-items:center;overflow:hidden;color:var(--ink);background:#ffd735 radial-gradient(#c7a52c 2px,transparent 2.5px);background-size:auto,28px 28px;font-family:ui-rounded,"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;user-select:none;-webkit-user-select:none}
-.phone{position:relative;width:min(100vw,570px);height:min(100svh,1100px);min-height:690px;background:var(--cream);border:8px solid var(--ink);border-radius:82px 82px 0 0;padding:22px 28px 26px;display:flex;flex-direction:column;gap:0;box-shadow:0 0 0 5px #f7f0e6;overflow:hidden}
-.status{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 30px;font-size:19px;font-weight:800;flex:none}
-.dynamic{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:145px;height:43px;border-radius:30px;background:var(--ink)}
-.status-icons{letter-spacing:3px;font-size:17px}
-.topbar{height:100px;display:flex;align-items:center;justify-content:space-between;flex:none;padding:0 8px}
-.avatar,.chat{width:60px;height:60px;border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fffaf2;font-size:27px}
-.flame{font-size:43px;color:var(--hot);text-shadow:2px 2px var(--ink),-2px -2px var(--ink),2px -2px var(--ink),-2px 2px var(--ink)}
-.chat{position:relative;color:#ffd735;text-shadow:1px 2px var(--ink),-1px -1px var(--ink);font-size:28px}
-.chat:after{content:"1";position:absolute;right:5px;top:7px;background:var(--hot);color:white;text-shadow:none;border:2px solid var(--ink);border-radius:50%;font-size:10px;width:15px;height:15px;display:grid;place-items:center}
-.profile-photo{position:relative;flex:1;min-height:300px;border:6px solid var(--ink);border-radius:27px;overflow:hidden;background:var(--cyan);touch-action:pan-y;cursor:grab}
-.profile-photo:active{cursor:grabbing}
-.profile-photo img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-.placeholder{height:100%;display:grid;place-items:center;text-align:center;padding:25px;color:var(--ink);font-weight:800;font-size:clamp(18px,4vw,26px);background:linear-gradient(145deg,#7de5e9 0 68%,#f45caf 68% 100%)}
-.placeholder small{display:block;font-size:14px;font-weight:600;margin-top:9px}
-.dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:7px;padding:6px 10px;background:#f7f0e6;border:3px solid var(--ink);border-radius:30px}
-.dot{width:13px;height:13px;border-radius:50%;background:#929292}
-.dot.active{background:var(--ink)}
-.profile-copy{padding:20px 4px 0;flex:none}
-h1{font-size:clamp(28px,6vw,39px);line-height:1.08;margin:0 0 12px;font-weight:900;letter-spacing:-1px}
-.job{color:#888;font-size:18px;margin-bottom:12px}
-.bio{font-size:17px;line-height:1.35;margin:0;max-width:470px}
-.actions{display:flex;justify-content:space-around;align-items:center;padding:24px 8px 0;flex:none}
-.action{width:84px;height:84px;border:5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:49px;font-weight:700;line-height:1}
-.action.no{background:var(--hot);color:white;text-shadow:2px 2px var(--ink),-2px -2px var(--ink),2px -2px var(--ink),-2px 2px var(--ink)}
-.action.yes{width:112px;height:112px;background:var(--green);font-size:65px;color:white;text-shadow:2px 2px var(--ink),-2px -2px var(--ink),2px -2px var(--ink),-2px 2px var(--ink)}
-.hint{position:absolute;bottom:7px;left:0;right:0;text-align:center;font-size:10px;opacity:.45;pointer-events:none}
-@media(max-height:760px){.phone{min-height:0;height:100svh;border-radius:48px 48px 0 0;padding:12px 20px 16px}.status{height:40px}.topbar{height:66px}.profile-copy{padding-top:13px}.actions{padding-top:14px}.action{width:65px;height:65px;font-size:38px}.action.yes{width:88px;height:88px;font-size:52px}.bio{font-size:15px}}
-@media(min-width:700px){.phone{height:min(96svh,1100px);border-radius:82px;border-bottom-width:8px}}
+:root {
+  --ink: #30323b;
+  --cream: #f7f0e6;
+  --cyan: #7de5e9;
+  --pink: #f45caf;
+  --hot: #ff2f61;
+  --yellow: #ffd42e;
+  --green: #00d84a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; width: 100%; }
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--ink);
+  background: #ffd735 radial-gradient(#c7a52c 2px, transparent 2.5px);
+  background-size: auto, 28px 28px;
+  font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.phone {
+  position: relative;
+  width: min(100vw, 570px);
+  height: min(100svh, 1100px);
+  min-height: 690px;
+  background: var(--cream);
+  border: 8px solid var(--ink);
+  border-radius: 82px 82px 0 0;
+  padding: 22px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 5px #f7f0e6;
+  overflow: hidden;
+}
+.status {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-size: 19px;
+  font-weight: 800;
+  flex: none;
+}
+.dynamic {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 145px;
+  height: 43px;
+  border-radius: 30px;
+  background: var(--ink);
+}
+.status-icons { letter-spacing: 3px; font-size: 17px; }
+.topbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  padding: 0 8px;
+}
+.avatar, .chat {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fffaf2;
+  font-size: 27px;
+}
+.flame {
+  font-size: 43px;
+  color: var(--hot);
+  text-shadow: 2px 2px var(--ink), -2px -2px var(--ink),
+    2px -2px var(--ink), -2px 2px var(--ink);
+}
+.chat {
+  position: relative;
+  color: #ffd735;
+  text-shadow: 1px 2px var(--ink), -1px -1px var(--ink);
+  font-size: 28px;
+}
+.chat:after {
+  content: "1";
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  background: var(--hot);
+  color: white;
+  text-shadow: none;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  font-size: 10px;
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+}
+.profile-photo {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  border: 6px solid var(--ink);
+  border-radius: 27px;
+  overflow: hidden;
+  background: var(--cyan);
+}
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 25px;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: clamp(18px, 4vw, 26px);
+  background: linear-gradient(145deg, #7de5e9 0 68%, #f45caf 68% 100%);
+}
+.placeholder small {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 9px;
+}
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  padding: 6px 10px;
+  background: #f7f0e6;
+  border: 3px solid var(--ink);
+  border-radius: 30px;
+}
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #929292;
+}
+.dot.active { background: var(--ink); }
+.profile-copy {
+  padding: 20px 4px 0;
+  flex: none;
+}
+h1 {
+  font-size: clamp(28px, 6vw, 39px);
+  line-height: 1.08;
+  margin: 0 0 12px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.job { color: #888; font-size: 18px; margin-bottom: 12px; }
+.bio { font-size: 17px; line-height: 1.35; margin: 0; max-width: 470px; }
+.actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 8px 0;
+  flex: none;
+}
+.action {
+  width: 84px;
+  height: 84px;
+  border: 5px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform .12s ease;
+}
+.action:active { transform: scale(.93); }
+.action.no {
+  background: var(--hot);
+  color: white;
+  text-shadow: 2px 2px var(--ink), -2px -2px var(--ink),
+    2px -2px var(--ink), -2px 2px var(--ink);
+}
+.action.yes {
+  width: 112px;
+  height: 112px;
+  background: var(--green);
+  font-size: 65px;
+  color: white;
+  text-shadow: 2px 2px var(--ink), -2px -2px var(--ink),
+    2px -2px var(--ink), -2px 2px var(--ink);
+}
+.hint {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  opacity: .45;
+  pointer-events: none;
+}
+@media(max-height:760px) {
+  .phone { min-height: 0; height: 100svh; border-radius: 48px 48px 0 0; padding: 12px 20px 16px; }
+  .status { height: 40px; }
+  .topbar { height: 66px; }
+  .profile-copy { padding-top: 13px; }
+  .actions { padding-top: 14px; }
+  .action { width: 65px; height: 65px; font-size: 38px; }
+  .action.yes { width: 88px; height: 88px; font-size: 52px; }
+  .bio { font-size: 15px; }
+}
+@media(min-width:700px) {
+  .phone { height: min(96svh, 1100px); border-radius: 82px; border-bottom-width: 8px; }
+}
 </style>
 </head>
 <body>
 <main class="phone">
-  <div class="status"><span>9:41</span><span class="dynamic"></span><span class="status-icons">▮▮▮ ◉ ▰</span></div>
+  <div class="status">
+    <span>9:41</span>
+    <span class="dynamic"></span>
+    <span class="status-icons">▮▮▮ ◉ ▰</span>
+  </div>
+
   <div class="topbar">
     <div class="avatar" aria-hidden="true">☺</div>
     <div class="flame" aria-hidden="true">♥</div>
     <div class="chat" aria-hidden="true">●</div>
   </div>
-  <section class="profile-photo" id="swipeArea" aria-label="Swipe profile photo left to skip or right to match">
-    <div class="placeholder" id="placeholder">YOUR PHOTO GOES HERE<small>Add image1.jpg and image2.jpg to this folder</small></div>
+
+  <section class="profile-photo">
+    <div class="placeholder" id="placeholder">
+      YOUR PHOTO GOES HERE
+      <small>Add image1.jpg to this folder</small>
+    </div>
     <img id="profileImage" alt="Profile photo" hidden>
-    <div class="dots" id="dots"><span class="dot active"></span><span class="dot"></span></div>
+    <div class="dots" id="dots"></div>
   </section>
+
   <section class="profile-copy">
-    <h1>Sharon Smith, 28</h1>
-    <div class="job">Interior designer</div>
-    <p class="bio">Hi! I'm Sharon. I love late-night walks, street photography, cozy cafes, and finding new songs</p>
+    <h1 id="profileName"></h1>
+    <div class="job" id="profileJob"></div>
+    <p class="bio" id="profileBio"></p>
   </section>
-  <div class="actions" aria-hidden="true">
-    <div class="action yes">♥</div>
-    <div class="action no">×</div>
+
+  <div class="actions">
+    <button class="action no" id="rejectButton" aria-label="Reject">×</button>
+    <button class="action yes" id="likeButton" aria-label="Like">♥</button>
   </div>
-  <div class="hint">Swipe left to skip · swipe right to match</div>
+
+  <div class="hint">The Affair</div>
 </main>
+
 <script>
 /*
-  Add your photos to this same folder and list their filenames here.
-  Example: ["image1.jpg", "image2.jpg", "image3.png"]
-  Skipping (left) loops through the list forever.
+  ADD PROFILES HERE.
+
+  Each profile uses image1.jpg, image2.jpg, etc.
+  X advances to the next profile.
+  After the last profile, it loops back to profile 1.
+  Heart opens match.html.
 */
-const photos = ["image1.jpg", "image2.jpg"];
-let current = 0;
 
-const image = document.getElementById("profileImage");
-const placeholder = document.getElementById("placeholder");
-const dots = document.getElementById("dots");
-
-function showPhoto() {
-  const filename = photos[current];
-  image.onerror = () => {
-    image.hidden = true;
-    placeholder.style.display = "grid";
-    placeholder.innerHTML = `PHOTO NOT FOUND<small>Put ${filename} in the TheAffair folder</small>`;
-  };
-  image.onload = () => {
-    image.hidden = false;
-    placeholder.style.display = "none";
-  };
-  image.src = filename;
-  dots.innerHTML = photos.map((_, i) => `<span class="dot ${i === current ? "active" : ""}"></span>`).join("");
-}
-function skip() {
-  current = (current + 1) % photos.length;
-  showPhoto();
-}
-function match() {
-  window.location.href = "match.html";
-}
-
-const area = document.getElementById("swipeArea");
-let startX = 0, startY = 0, dragging = false;
-area.addEventListener("pointerdown", e => {
-  startX = e.clientX; startY = e.clientY; dragging = true;
-  area.setPointerCapture(e.pointerId);
-});
-area.addEventListener("pointerup", e => {
-  if (!dragging) return;
-  dragging = false;
-  const dx = e.clientX - startX, dy = e.clientY - startY;
-  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.15) {
-    if (dx < 0) skip(); else match();
+const profiles = [
+  {
+    image: "image1.jpg",
+    name: "Sharon Smith, 28",
+    job: "Interior designer",
+    bio: "Hi! I'm Sharon. I love late-night walks, street photography, cozy cafes, and finding new songs."
+  },
+  {
+    image: "image2.jpg",
+    name: "Alex Morgan, 27",
+    job: "Photographer",
+    bio: "Always looking for hidden gems, good coffee, and somewhere new to explore."
   }
+];
+
+// Read the current profile from the URL.
+const requestedPage = Number.parseInt(
+  new URLSearchParams(window.location.search).get("page") || "0",
+  10
+);
+
+const pageIndex = Number.isFinite(requestedPage)
+  ? ((requestedPage % profiles.length) + profiles.length) % profiles.length
+  : 0;
+
+const profile = profiles[pageIndex];
+
+document.getElementById("profileName").textContent = profile.name;
+document.getElementById("profileJob").textContent = profile.job;
+document.getElementById("profileBio").textContent = profile.bio;
+
+// Load the profile image.
+const photo = document.getElementById("profileImage");
+const placeholder = document.getElementById("placeholder");
+
+placeholder.innerHTML =
+  `YOUR PHOTO GOES HERE<small>Add ${profile.image} to this folder</small>`;
+
+photo.onload = () => {
+  photo.hidden = false;
+  placeholder.style.display = "none";
+};
+
+photo.onerror = () => {
+  photo.hidden = true;
+  placeholder.style.display = "grid";
+};
+
+photo.src = profile.image;
+
+// Profile position indicators.
+document.getElementById("dots").innerHTML =
+  profiles.map((_, i) =>
+    `<span class="dot ${i === pageIndex ? "active" : ""}"></span>`
+  ).join("");
+
+// Reject: move to next profile, looping forever.
+document.getElementById("rejectButton").addEventListener("click", () => {
+  const nextPage = (pageIndex + 1) % profiles.length;
+  window.location.href = `index.html?page=${nextPage}`;
 });
-area.addEventListener("pointercancel", () => dragging = false);
-showPhoto();
+
+// Like: open match screen.
+document.getElementById("likeButton").addEventListener("click", () => {
+  window.location.href = "match.html";
+});
 </script>
 </body>
 </html>
