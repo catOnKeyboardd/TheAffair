@@ -13,7 +13,8 @@ import type { DateOption } from "@/lib/types";
 import s from "./date.module.css";
 
 const MAX = 5;
-const START = 3;
+const START_HEART = 3;
+const START_STOCK = 2; // lower than hearts on purpose: harder to win
 const clamp = (n: number) => Math.max(0, Math.min(MAX, n));
 const DEFAULT_LOCATION = "fancy";
 
@@ -39,8 +40,8 @@ export default function DateSim() {
   const { matches } = useStore();
   const match = matches.find((m) => m.personaId === id);
 
-  const [heart, setHeart] = useState(START);
-  const [stock, setStock] = useState(START);
+  const [heart, setHeart] = useState(START_HEART);
+  const [stock, setStock] = useState(START_STOCK);
   const [round, setRound] = useState(0);
   const [bubble, setBubble] = useState<string | null>(null);
   const [picked, setPicked] = useState<string | null>(null);

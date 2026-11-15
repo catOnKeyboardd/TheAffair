@@ -33,22 +33,21 @@
               "me": "Ight ill be late tonight don't wait for me",
               "them": [
                 "Ok have fun babe"
-              ],
-              "location": "home"
+              ]
             },
             {
               "me": "Ight ill be home on time",
               "them": [
                 "Ok have fun babe"
-              ],
-              "location": "home"
+              ]
             }
           ]
         }
       }
     },
     "avatar": "/person1.svg",
-    "age": 59
+    "age": 59,
+    "noDate": true
   },
   {
     "id": "spy",

@@ -50,6 +50,7 @@ export type Persona = {
   items: ProfileItem[]; // photos (+ optional prompts). First photo = card photo
   story: Story;
   date?: DateSim; // falls back to data/dates.json "default"
+  noDate?: boolean; // true = no date sim; chat ends -> back to the swipe page
   backstory?: string; // only needed if we hook up an LLM later
 };
 

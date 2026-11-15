@@ -26,14 +26,15 @@ export default function Chat() {
   // Path finished: 1.5s later -> date sim, or lose page if blocked
   const over = !!match?.over;
   const blockedEnd = !!match?.blocked;
+  const noDate = !!persona?.noDate; // e.g. The Wife: chat only, then back to swiping
   useEffect(() => {
     if (!over) return;
     const t = setTimeout(
-      () => router.push(blockedEnd ? `/lose?reason=blocked&who=${id}` : `/date/${id}`),
+      () => router.push(blockedEnd ? `/lose?reason=blocked&who=${id}` : noDate ? "/" : `/date/${id}`),
       1500,
     );
     return () => clearTimeout(t);
-  }, [over, blockedEnd, id, router]);
+  }, [over, blockedEnd, noDate, id, router]);
 
   if (!persona || !match) {
     return (
@@ -110,7 +111,7 @@ export default function Chat() {
 
       {match.over && (
         <div className={s.choices}>
-          <div className={s.heading}>{blocked ? "💀 uh oh…" : "✦ HEADING TO THE DATE… ✦"}</div>
+          <div className={s.heading}>{blocked ? "💀 uh oh…" : persona.noDate ? "✦ BACK TO SWIPING… ✦" : "✦ HEADING TO THE DATE… ✦"}</div>
         </div>
       )}
 
