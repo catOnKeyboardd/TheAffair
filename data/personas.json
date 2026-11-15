@@ -114,7 +114,7 @@
     ],
     "avatarStart": 0,
     "date": {
-      "intro": "PLACEHOLDER date for Alice (Raymond can rewrite). Every 'Sell state secrets' = glow-up, but 📈 drops.",
+      "intro": "PLACEHOLDER date for Alice (Raymond can rewrite). She glows up every time you DON'T sell state secrets.",
       "rounds": [
         {
           "options": [
@@ -122,26 +122,28 @@
               "text": "Sell state secrets 🤫",
               "heart": 1,
               "stock": -1,
-              "reply": "ooh… tell me more 😍",
-              "glowUp": true
+              "reply": "ooh… tell me more 😍"
             },
             {
               "text": "Ask about Taipei night markets",
               "heart": 1,
               "stock": 0,
-              "reply": "you know the best stinky tofu spot??"
+              "reply": "you know the best stinky tofu spot??",
+              "glowUp": true
             },
             {
               "text": "Ask who she really works for",
               "heart": -1,
               "stock": 0,
-              "reply": "…why do you ask? 🙂"
+              "reply": "…why do you ask? 🙂",
+              "glowUp": true
             },
             {
               "text": "Talk about earnings",
               "heart": -1,
               "stock": 1,
-              "reply": "…cool. very cool."
+              "reply": "…cool. very cool.",
+              "glowUp": true
             }
           ]
         },
@@ -151,26 +153,28 @@
               "text": "Sell state secrets 🤫",
               "heart": 1,
               "stock": -1,
-              "reply": "you're so generous 💋",
-              "glowUp": true
+              "reply": "you're so generous 💋"
             },
             {
               "text": "Order bubble tea for two",
               "heart": 1,
               "stock": 0,
-              "reply": "aww 🧋"
+              "reply": "aww 🧋",
+              "glowUp": true
             },
             {
               "text": "Check if she's wearing a wire",
               "heart": -1,
               "stock": 0,
-              "reply": "excuse me??"
+              "reply": "excuse me??",
+              "glowUp": true
             },
             {
               "text": "Announce a new chip mid-date",
               "heart": -1,
               "stock": 1,
-              "reply": "are you doing a keynote right now?"
+              "reply": "are you doing a keynote right now?",
+              "glowUp": true
             }
           ]
         },
@@ -180,26 +184,28 @@
               "text": "Sell state secrets 🤫",
               "heart": 1,
               "stock": -1,
-              "reply": "I think I'm falling for you ✨",
-              "glowUp": true
+              "reply": "I think I'm falling for you ✨"
             },
             {
               "text": "Offer your leather jacket",
               "heart": 1,
               "stock": 0,
-              "reply": "it's warm… and smells like ambition"
+              "reply": "it's warm… and smells like ambition",
+              "glowUp": true
             },
             {
               "text": "Leave early for a keynote",
               "heart": -1,
               "stock": 1,
-              "reply": "wow. ok. bye."
+              "reply": "wow. ok. bye.",
+              "glowUp": true
             },
             {
               "text": "Sign her arm with a Sharpie",
               "heart": 0,
               "stock": 1,
-              "reply": "…thanks? I guess?"
+              "reply": "…thanks? I guess?",
+              "glowUp": true
             }
           ]
         }
