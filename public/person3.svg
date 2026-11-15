@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- The VP: generic cartoon character in the app's ink/cream style -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7de5e9"/>
+      <stop offset="100%" stop-color="#a9ed7d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <!-- office window grid in the back -->
+  <g stroke="#30323b" stroke-width="4" fill="#ffffff" opacity="0.55">
+    <rect x="24" y="40" width="80" height="110" rx="8"/>
+    <rect x="296" y="40" width="80" height="110" rx="8"/>
+  </g>
+  <g stroke="#30323b" stroke-width="3" opacity="0.55">
+    <line x1="64" y1="40" x2="64" y2="150"/><line x1="24" y1="95" x2="104" y2="95"/>
+    <line x1="336" y1="40" x2="336" y2="150"/><line x1="296" y1="95" x2="376" y2="95"/>
+  </g>
+
+  <g stroke="#30323b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- hair (back), short bob -->
+    <path d="M108 238 C96 150 140 92 200 92 C262 92 306 150 292 238 C296 268 286 296 270 312 L130 312 C112 296 104 268 108 238 Z" fill="#2b2b33"/>
+    <!-- neck -->
+    <rect x="178" y="300" width="44" height="48" fill="#e0a782"/>
+    <!-- body: blazer -->
+    <path d="M58 500 C62 410 112 350 200 350 C288 350 338 410 342 500 Z" fill="#30323b"/>
+    <!-- shirt V -->
+    <path d="M168 352 L200 420 L232 352 Z" fill="#ffffff"/>
+    <!-- lapels -->
+    <path d="M168 352 L148 380 L178 400 L200 420 Z" fill="#3e4150"/>
+    <path d="M232 352 L252 380 L222 400 L200 420 Z" fill="#3e4150"/>
+    <!-- head -->
+    <ellipse cx="200" cy="215" rx="82" ry="92" fill="#e9b892"/>
+    <!-- fringe / side part -->
+    <path d="M118 200 C120 140 160 110 206 112 C250 114 280 140 284 196 C254 168 214 150 176 150 C150 160 134 178 118 200 Z" fill="#2b2b33"/>
+    <!-- glasses -->
+    <rect x="140" y="200" width="50" height="38" rx="12" fill="#ffffff" fill-opacity="0.35"/>
+    <rect x="210" y="200" width="50" height="38" rx="12" fill="#ffffff" fill-opacity="0.35"/>
+    <line x1="190" y1="216" x2="210" y2="216"/>
+  </g>
+  <!-- eyes -->
+  <circle cx="165" cy="220" r="7" fill="#30323b"/>
+  <circle cx="235" cy="220" r="7" fill="#30323b"/>
+  <!-- confident smirk -->
+  <path d="M176 268 C192 280 214 280 230 264" fill="none" stroke="#30323b" stroke-width="6" stroke-linecap="round"/>
+  <!-- blush -->
+  <ellipse cx="144" cy="256" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
+  <ellipse cx="256" cy="256" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
+  <!-- lanyard + badge -->
+  <path d="M176 352 L200 432 L224 352" fill="none" stroke="#76b900" stroke-width="7"/>
+  <rect x="172" y="430" width="56" height="44" rx="8" fill="#ffd42e" stroke="#30323b" stroke-width="6"/>
+  <text x="200" y="462" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="22" font-weight="900" fill="#30323b">VP</text>
+  <!-- coffee mug: "1:1" -->
+  <g stroke="#30323b" stroke-width="6" stroke-linejoin="round">
+    <rect x="286" y="404" width="58" height="66" rx="8" fill="#ff2f61"/>
+    <path d="M344 420 C368 420 368 456 344 456" fill="none"/>
+  </g>
+  <text x="315" y="446" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="20" font-weight="900" fill="#ffffff">1:1</text>
+  <path d="M302 392 C296 380 310 374 304 362 M326 392 C320 380 334 374 328 362" fill="none" stroke="#30323b" stroke-width="4" stroke-linecap="round"/>
+</svg>

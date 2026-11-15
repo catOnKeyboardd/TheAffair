@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- The Mystery 3rd: cartoon silhouette, same ink/cream palette as the app -->
+  <defs>
+    <radialGradient id="spot" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#f45caf"/>
+      <stop offset="55%" stop-color="#7a2e8c"/>
+      <stop offset="100%" stop-color="#30323b"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#spot)"/>
+  <!-- sparkles -->
+  <g fill="#ffd42e" stroke="#30323b" stroke-width="4" stroke-linejoin="round">
+    <path d="M62 92 l9 22 22 9 -22 9 -9 22 -9 -22 -22 -9 22 -9z"/>
+    <path d="M338 150 l7 16 16 7 -16 7 -7 16 -7 -16 -16 -7 16 -7z"/>
+    <path d="M330 52 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z"/>
+  </g>
+  <!-- shoulders -->
+  <path d="M60 500 C70 400 130 360 200 360 C270 360 330 400 340 500 Z" fill="#1b1c22" stroke="#30323b" stroke-width="8"/>
+  <!-- hood / hat brim -->
+  <ellipse cx="200" cy="170" rx="128" ry="26" fill="#1b1c22" stroke="#30323b" stroke-width="8"/>
+  <!-- head -->
+  <circle cx="200" cy="245" r="92" fill="#1b1c22" stroke="#30323b" stroke-width="8"/>
+  <!-- fedora crown -->
+  <path d="M120 170 C122 105 150 82 200 82 C250 82 278 105 280 170 Z" fill="#1b1c22" stroke="#30323b" stroke-width="8"/>
+  <rect x="122" y="146" width="156" height="20" fill="#ff2f61" stroke="#30323b" stroke-width="6"/>
+  <!-- glowing eyes -->
+  <ellipse cx="168" cy="245" rx="15" ry="9" fill="#ffd42e"/>
+  <ellipse cx="232" cy="245" rx="15" ry="9" fill="#ffd42e"/>
+  <!-- big question mark -->
+  <text x="200" y="488" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="120" font-weight="900" fill="#ffd42e" stroke="#30323b" stroke-width="7" paint-order="stroke">?</text>
+</svg>

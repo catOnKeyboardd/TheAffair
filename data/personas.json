@@ -108,7 +108,7 @@
       {
         "id": "vp-p1",
         "kind": "photo",
-        "caption": "Q3 offsite"
+        "src": "/person3.svg"
       }
     ],
     "story": {
@@ -145,7 +145,7 @@
         }
       }
     },
-    "avatar": "/person3.jpg"
+    "avatar": "/person3.svg"
   },
   {
     "id": "third",
@@ -157,7 +157,8 @@
       {
         "id": "third-p1",
         "kind": "photo",
-        "caption": "???"
+        "caption": "???",
+        "src": "/person4.svg"
       }
     ],
     "story": {
@@ -202,6 +203,6 @@
         }
       }
     },
-    "avatar": "/person4.jpg"
+    "avatar": "/person4.svg"
   }
 ]
