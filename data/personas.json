@@ -1,0 +1,35 @@
+[
+  {
+    "id": "tess",
+    "name": "Tess",
+    "age": 39,
+    "location": "Hsinchu",
+    "job": "Owns a few fabs",
+    "items": [
+      { "id": "tess-p1", "kind": "photo", "caption": "me at work (cleanroom chic)" },
+      { "id": "tess-q1", "kind": "prompt", "question": "I'm looking for", "answer": "someone who commits to volume 18 months in advance" },
+      { "id": "tess-p2", "kind": "photo", "caption": "3nm and thriving" },
+      { "id": "tess-q2", "kind": "prompt", "question": "A green flag I look for", "answer": "you prepay. in full." },
+      { "id": "tess-p3", "kind": "photo" },
+      { "id": "tess-q3", "kind": "prompt", "question": "We'll get along if", "answer": "you don't mention Arizona on the first date" }
+    ],
+    "backstory": "PLACEHOLDER (Raymond): Tess is the most in-demand person in the industry and knows it. Busy, a little smug, flirts in lead times.",
+    "openingLine": "ok you're cute but my calendar is booked through 2028"
+  },
+  {
+    "id": "hanna",
+    "name": "Hanna",
+    "age": 27,
+    "location": "Icheon",
+    "job": "High-bandwidth memory",
+    "items": [
+      { "id": "hanna-p1", "kind": "photo", "caption": "stacked" },
+      { "id": "hanna-q1", "kind": "prompt", "question": "My most irrational fear", "answer": "being a bottleneck" },
+      { "id": "hanna-p2", "kind": "photo" },
+      { "id": "hanna-q2", "kind": "prompt", "question": "Typical Sunday", "answer": "running at 9.6 Gbps and still feeling slow" },
+      { "id": "hanna-q3", "kind": "prompt", "question": "I'll fall for you if", "answer": "you put me right next to your GPU" }
+    ],
+    "backstory": "PLACEHOLDER (Raymond): Hanna is fast, anxious about keeping up, and very clingy (wants to be co-packaged).",
+    "openingLine": "omg hi. how many of me do you need?? asking for a roadmap"
+  }
+]
