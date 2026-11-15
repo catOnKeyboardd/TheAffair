@@ -1,60 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
-  <!-- The VP: generic cartoon character in the app's ink/cream style -->
+  <!-- The VP: cartoon based on the team's AI-generated reference -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7de5e9"/>
-      <stop offset="100%" stop-color="#a9ed7d"/>
-    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#f4f4f6"/>
+      <stop offset="100%" stop-color="#c9cbd2"/>
+    </radialGradient>
   </defs>
   <rect width="400" height="500" fill="url(#bg)"/>
-  <!-- office window grid in the back -->
-  <g stroke="#30323b" stroke-width="4" fill="#ffffff" opacity="0.55">
-    <rect x="24" y="40" width="80" height="110" rx="8"/>
-    <rect x="296" y="40" width="80" height="110" rx="8"/>
-  </g>
-  <g stroke="#30323b" stroke-width="3" opacity="0.55">
-    <line x1="64" y1="40" x2="64" y2="150"/><line x1="24" y1="95" x2="104" y2="95"/>
-    <line x1="336" y1="40" x2="336" y2="150"/><line x1="296" y1="95" x2="376" y2="95"/>
-  </g>
 
   <g stroke="#30323b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
-    <!-- hair (back), short bob -->
-    <path d="M108 238 C96 150 140 92 200 92 C262 92 306 150 292 238 C296 268 286 296 270 312 L130 312 C112 296 104 268 108 238 Z" fill="#2b2b33"/>
+    <!-- wavy shoulder-length hair, back layer -->
+    <path d="M200 70
+             C140 66 100 112 98 170
+             C90 196 104 214 96 238
+             C86 262 104 282 96 304
+             C90 326 112 346 136 340
+             C150 352 170 348 176 336
+             L224 336
+             C230 348 250 352 264 340
+             C288 346 310 326 304 304
+             C296 282 314 262 304 238
+             C296 214 310 196 302 170
+             C300 112 260 66 200 70 Z" fill="#a8743f"/>
     <!-- neck -->
-    <rect x="178" y="300" width="44" height="48" fill="#e0a782"/>
-    <!-- body: blazer -->
-    <path d="M58 500 C62 410 112 350 200 350 C288 350 338 410 342 500 Z" fill="#30323b"/>
-    <!-- shirt V -->
-    <path d="M168 352 L200 420 L232 352 Z" fill="#ffffff"/>
-    <!-- lapels -->
-    <path d="M168 352 L148 380 L178 400 L200 420 Z" fill="#3e4150"/>
-    <path d="M232 352 L252 380 L222 400 L200 420 Z" fill="#3e4150"/>
+    <path d="M176 290 L176 352 L224 352 L224 290 Z" fill="#efc09c"/>
+    <!-- body: navy scoop-neck top -->
+    <path d="M52 500 C56 414 104 352 200 352 C296 352 344 414 348 500 Z" fill="#2c3e75"/>
+    <!-- scoop neckline (skin) -->
+    <path d="M150 356 C160 392 240 392 250 356 C232 352 168 352 150 356 Z" fill="#efc09c"/>
     <!-- head -->
-    <ellipse cx="200" cy="215" rx="82" ry="92" fill="#e9b892"/>
-    <!-- fringe / side part -->
-    <path d="M118 200 C120 140 160 110 206 112 C250 114 280 140 284 196 C254 168 214 150 176 150 C150 160 134 178 118 200 Z" fill="#2b2b33"/>
-    <!-- glasses -->
-    <rect x="140" y="200" width="50" height="38" rx="12" fill="#ffffff" fill-opacity="0.35"/>
-    <rect x="210" y="200" width="50" height="38" rx="12" fill="#ffffff" fill-opacity="0.35"/>
-    <line x1="190" y1="216" x2="210" y2="216"/>
+    <ellipse cx="200" cy="208" rx="76" ry="90" fill="#f4caa8"/>
+    <!-- center-parted wavy top hair framing the face -->
+    <path d="M124 214
+             C112 160 140 102 200 98
+             C260 102 288 160 276 214
+             C268 188 256 164 236 150
+             C222 140 206 134 200 120
+             C194 134 178 140 164 150
+             C144 164 132 188 124 214 Z" fill="#b98049"/>
+    <!-- curls along the sides -->
+    <path d="M124 214 C112 236 130 252 118 274 C108 292 124 308 116 324" fill="none"/>
+    <path d="M276 214 C288 236 270 252 282 274 C292 292 276 308 284 324" fill="none"/>
   </g>
-  <!-- eyes -->
-  <circle cx="165" cy="220" r="7" fill="#30323b"/>
-  <circle cx="235" cy="220" r="7" fill="#30323b"/>
-  <!-- confident smirk -->
-  <path d="M176 268 C192 280 214 280 230 264" fill="none" stroke="#30323b" stroke-width="6" stroke-linecap="round"/>
-  <!-- blush -->
-  <ellipse cx="144" cy="256" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
-  <ellipse cx="256" cy="256" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
-  <!-- lanyard + badge -->
-  <path d="M176 352 L200 432 L224 352" fill="none" stroke="#76b900" stroke-width="7"/>
-  <rect x="172" y="430" width="56" height="44" rx="8" fill="#ffd42e" stroke="#30323b" stroke-width="6"/>
-  <text x="200" y="462" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="22" font-weight="900" fill="#30323b">VP</text>
-  <!-- coffee mug: "1:1" -->
-  <g stroke="#30323b" stroke-width="6" stroke-linejoin="round">
-    <rect x="286" y="404" width="58" height="66" rx="8" fill="#ff2f61"/>
-    <path d="M344 420 C368 420 368 456 344 456" fill="none"/>
+  <!-- highlight strands -->
+  <g fill="none" stroke="#d9a466" stroke-width="5" stroke-linecap="round" opacity="0.9">
+    <path d="M150 150 C140 176 136 200 138 224"/>
+    <path d="M250 150 C260 176 264 200 262 224"/>
+    <path d="M116 250 C108 270 116 290 110 310"/>
+    <path d="M284 250 C292 270 284 290 290 310"/>
   </g>
-  <text x="315" y="446" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="20" font-weight="900" fill="#ffffff">1:1</text>
-  <path d="M302 392 C296 380 310 374 304 362 M326 392 C320 380 334 374 328 362" fill="none" stroke="#30323b" stroke-width="4" stroke-linecap="round"/>
+  <!-- eyebrows -->
+  <path d="M152 186 C162 178 176 178 186 184 M214 184 C224 178 238 178 248 186" fill="none" stroke="#6b4423" stroke-width="5" stroke-linecap="round"/>
+  <!-- eyes: friendly, slightly squinting from smiling -->
+  <path d="M156 210 C164 202 178 202 184 210" fill="none" stroke="#30323b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M216 210 C222 202 236 202 244 210" fill="none" stroke="#30323b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="170" cy="212" r="5" fill="#30323b"/>
+  <circle cx="230" cy="212" r="5" fill="#30323b"/>
+  <!-- nose -->
+  <path d="M200 222 C196 238 194 246 202 248" fill="none" stroke="#c98b66" stroke-width="4" stroke-linecap="round"/>
+  <!-- big warm smile with teeth -->
+  <path d="M164 262 C178 296 222 296 236 262 Z" fill="#ffffff" stroke="#30323b" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M168 266 C190 272 210 272 232 266" fill="none" stroke="#30323b" stroke-width="3"/>
+  <!-- cheeks -->
+  <ellipse cx="148" cy="246" rx="13" ry="8" fill="#f45caf" opacity="0.35"/>
+  <ellipse cx="252" cy="246" rx="13" ry="8" fill="#f45caf" opacity="0.35"/>
+  <!-- buttons on the top -->
+  <circle cx="200" cy="430" r="5" fill="#1e2b55" stroke="#30323b" stroke-width="3"/>
+  <circle cx="200" cy="460" r="5" fill="#1e2b55" stroke="#30323b" stroke-width="3"/>
+  <!-- small VP badge clipped on -->
+  <g stroke="#30323b" stroke-width="5" stroke-linejoin="round">
+    <rect x="252" y="400" width="54" height="38" rx="7" fill="#ffd42e"/>
+  </g>
+  <text x="279" y="427" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="20" font-weight="900" fill="#30323b">VP</text>
 </svg>
