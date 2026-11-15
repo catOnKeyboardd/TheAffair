@@ -14,7 +14,9 @@ export default function Swipe() {
   const router = useRouter();
   const { seen, like, skip } = useStore();
   const [matched, setMatched] = useState<Persona | null>(null);
-  const remaining = personas.filter((p) => !seen.includes(p.id));
+  // Deck loops forever: rotate the list by how many swipes so far
+  const start = seen.length % personas.length;
+  const deck = [...personas.slice(start), ...personas.slice(0, start)];
 
   useEffect(() => {
     if (!matched) return;
@@ -25,8 +27,8 @@ export default function Swipe() {
   return (
     <>
       <ProfileDeck
-        key={remaining[0]?.id ?? "empty"} // fresh state per profile
-        personas={remaining}
+        key={seen.length} // fresh card state per swipe (same profile can come back around)
+        personas={deck}
         onLike={(p) => {
           like(p);
           setMatched(p);
