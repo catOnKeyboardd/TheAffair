@@ -48,15 +48,14 @@
       }
     },
     "avatar": "/person1.svg",
-    "age": 59,
-    "lookingFor": "Long-term (apparently I already have one?)"
+    "age": 59
   },
   {
     "id": "spy",
     "name": "Alice",
     "location": "Taipei · 0 miles away, always",
     "job": "Into chips 🍟 (not those ones)",
-    "bio": "Megaspeed enthusiast 🚀 Love night markets, long walks and export licenses. Definitely not a spy 😇",
+    "bio": "Segameed enthusiast 🚀 Love night markets, long walks and export licenses. Definitely not a spy 😇",
     "items": [
       {
         "id": "spy-p1",
