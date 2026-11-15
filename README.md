@@ -55,8 +55,8 @@ Everything lives in `data/personas.json`. Each persona has a `story`, matching R
 
 After a chat path ends: 1.5s later → `/date/<id>`. A blocked ending (`"blocked": true`) → lose page instead.
 
-- Bars: ❤️ and 📈, 5 notches, both start at 3. Each round has 4 options with `heart` / `stock` weights.
-- Lose: either bar hits 0, or the last round ends without ❤️ = 5. Win: finish with ❤️ = 5.
+- Bars: ❤️ and 📈, 5 notches. ❤️ starts at 3, 📈 starts at 2. Each round has 4 options with `heart` / `stock` weights.
+- Lose: 📈 drops to 1 or less, ❤️ hits 0, or the last round ends below 4 ❤️. Win: finish with ❤️ >= 4.
 - Placeholder rounds: `data/dates.json` → `"default"`. Give a persona its own with a `"date"` key (same shape).
 - Backgrounds: `data/locations.json`. The ending choice's `"location"` picks it; an option's `"location"` switches it mid-date.
   Drop `public/bg-<key>.jpg` (e.g. `bg-blackwell.jpg`) and it replaces the gradient automatically.

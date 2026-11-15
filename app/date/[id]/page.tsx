@@ -2,7 +2,7 @@
 
 // Stage 3: date simulation.
 // ❤️ and 📈 bars, 5 notches each, start at 3. Each round has 4 options with heart/stock weights.
-// Lose: either bar hits 0, or the date ends without full hearts. Win: finish with ❤️ = 5.
+// Lose: 📈 drops to 1 or less, ❤️ hits 0, or the date ends below 4 ❤️. Win: finish with ❤️ >= 4.
 // Content lives in data/dates.json ("default") or a persona's "date" in personas.json.
 
 import { useParams, useRouter } from "next/navigation";
@@ -15,6 +15,8 @@ import s from "./date.module.css";
 const MAX = 5;
 const START_HEART = 3;
 const START_STOCK = 2; // lower than hearts on purpose: harder to win
+const WIN_HEART = 4; // finish the date with at least this many hearts
+const LOSE_STOCK = 1; // stock at or below this = instant loss
 const clamp = (n: number) => Math.max(0, Math.min(MAX, n));
 const DEFAULT_LOCATION = "fancy";
 
@@ -93,10 +95,10 @@ export default function DateSim() {
       setShake({ heart: o.heart < 0, stock: o.stock < 0 });
 
       const lastRound = round >= date.rounds.length - 1;
-      if (st <= 0) return later(1600, () => router.push(`/lose?reason=stock&who=${id}`));
+      if (st <= LOSE_STOCK) return later(1600, () => router.push(`/lose?reason=stock&who=${id}`));
       if (h <= 0) return later(1600, () => router.push(`/lose?reason=heart&who=${id}`));
       if (lastRound)
-        return later(1800, () => router.push(h >= MAX ? `/win?who=${id}` : `/lose?reason=love&who=${id}`));
+        return later(1800, () => router.push(h >= WIN_HEART ? `/win?who=${id}` : `/lose?reason=love&who=${id}`));
 
       later(1600, () => {
         setRound((r) => r + 1);
