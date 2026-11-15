@@ -4,7 +4,7 @@ export type ProfileItem =
   | { id: string; kind: "photo"; src?: string; caption?: string }
   | { id: string; kind: "prompt"; question: string; answer: string };
 
-// ---- Story (Raymond's Figma flowcharts) ----
+// ---- Stage 2: texting story (Raymond's Figma flowcharts) ----
 // Blue box  = a choice Jensen can send ("me")
 // Diamond   = the persona's reply ("them")
 // Then either go to the next set of choices ("next") or the chat ends.
@@ -13,9 +13,22 @@ export type StoryChoice = {
   them: string[]; // persona's reply bubble(s)
   next?: string; // id of the next node; leave out to end the chat
   end?: string; // optional system line at the end, e.g. "🚫 Alice blocked you"
+  blocked?: boolean; // true = this ending loses the game (blocked page)
+  location?: string; // ending only: where the date happens (key in data/locations.json)
 };
 export type StoryNode = { choices: StoryChoice[] };
 export type Story = { start: string; nodes: Record<string, StoryNode> };
+
+// ---- Stage 3: date simulation ----
+export type DateOption = {
+  text: string; // button text
+  heart: number; // notches gained/lost on the ❤️ bar (e.g. 1, -1, 0)
+  stock: number; // notches gained/lost on the 📈 bar
+  reply: string; // character's speech bubble after this pick
+  location?: string; // optional: switch the background (key in data/locations.json)
+};
+export type DateRound = { options: DateOption[] }; // 4 options each
+export type DateSim = { intro?: string; rounds: DateRound[] };
 
 export type Persona = {
   id: string;
@@ -24,10 +37,14 @@ export type Persona = {
   location: string;
   job: string;
   bio: string; // shown on the swipe card
+  avatar?: string; // date sim portrait, e.g. "/person1.jpg"
   items: ProfileItem[]; // photos (+ optional prompts). First photo = card photo
   story: Story;
+  date?: DateSim; // falls back to data/dates.json "default"
   backstory?: string; // only needed if we hook up an LLM later
 };
+
+export type Location = { name: string; image?: string; gradient: string };
 
 export type ChatMessage = {
   id: string;
@@ -40,6 +57,8 @@ export type Match = {
   messages: ChatMessage[];
   node: string | null; // current story node; null = persona typing or chat over
   over: boolean;
+  blocked?: boolean; // ended on a blocked branch
+  location?: string; // date location picked by the ending
 };
 
 // Swipe deck contract

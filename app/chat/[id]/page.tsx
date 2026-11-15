@@ -4,16 +4,16 @@
 // Jensen picks a reply button -> persona types -> next choices, until the story ends.
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { personas } from "@/lib/personas";
 import { getPersona, useStore } from "@/lib/store";
 import s from "./chat.module.css";
 
 export default function Chat() {
   const { id } = useParams<{ id: string }>();
   const persona = getPersona(id);
-  const { matches, typing, choose, seen } = useStore();
+  const router = useRouter();
+  const { matches, typing, choose } = useStore();
   const match = matches.find((m) => m.personaId === id);
   const bottom = useRef<HTMLDivElement>(null);
 
@@ -22,6 +22,18 @@ export default function Chat() {
   useEffect(() => {
     bottom.current?.scrollIntoView({ behavior: "smooth" });
   }, [count, isTyping, match?.node]);
+
+  // Path finished: 1.5s later -> date sim, or lose page if blocked
+  const over = !!match?.over;
+  const blockedEnd = !!match?.blocked;
+  useEffect(() => {
+    if (!over) return;
+    const t = setTimeout(
+      () => router.push(blockedEnd ? `/lose?reason=blocked&who=${id}` : `/date/${id}`),
+      1500,
+    );
+    return () => clearTimeout(t);
+  }, [over, blockedEnd, id, router]);
 
   if (!persona || !match) {
     return (
@@ -36,8 +48,7 @@ export default function Chat() {
 
   const photo = persona.items.find((i) => i.kind === "photo");
   const node = match.node ? persona.story.nodes[match.node] : null;
-  const blocked = match.messages.some((m) => m.from === "system" && m.text.includes("blocked"));
-  const moreToSwipe = personas.some((p) => !seen.includes(p.id));
+  const blocked = !!match.blocked;
 
   return (
     <div className={s.chat}>
@@ -99,9 +110,7 @@ export default function Chat() {
 
       {match.over && (
         <div className={s.choices}>
-          <Link href={moreToSwipe ? "/" : "/matches"} className={`${s.choice} ${s.next}`}>
-            {moreToSwipe ? "Keep swiping →" : "See all your affairs →"}
-          </Link>
+          <div className={s.heading}>{blocked ? "💀 uh oh…" : "✦ HEADING TO THE DATE… ✦"}</div>
         </div>
       )}
 

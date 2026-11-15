@@ -51,6 +51,17 @@ Everything lives in `data/personas.json`. Each persona has a `story`, matching R
 - `end` = optional system line when the chat ends (e.g. blocked)
 - Photos: put the image in `public/` and set `"src": "/alice.jpg"` on the photo item.
 
+## Date simulation (stage 3)
+
+After a chat path ends: 1.5s later → `/date/<id>`. A blocked ending (`"blocked": true`) → lose page instead.
+
+- Bars: ❤️ and 📈, 5 notches, both start at 3. Each round has 4 options with `heart` / `stock` weights.
+- Lose: either bar hits 0, or the last round ends without ❤️ = 5. Win: finish with ❤️ = 5.
+- Placeholder rounds: `data/dates.json` → `"default"`. Give a persona its own with a `"date"` key (same shape).
+- Backgrounds: `data/locations.json`. The ending choice's `"location"` picks it; an option's `"location"` switches it mid-date.
+  Drop `public/bg-<key>.jpg` (e.g. `bg-blackwell.jpg`) and it replaces the gradient automatically.
+- Avatars: `public/person1.jpg` … `personN.jpg` (set via `"avatar"` on each persona). Missing image → letter placeholder.
+
 Shared types: `lib/types.ts`.
 
 ## Rules

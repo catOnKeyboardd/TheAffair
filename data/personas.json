@@ -5,23 +5,48 @@
     "location": "Home",
     "job": "Makes a mean meatloaf",
     "bio": "Dinner's at 7. Don't be late. (Placeholder bio - Raymond)",
-    "items": [{ "id": "wife-p1", "kind": "photo", "caption": "dinner's ready" }],
+    "items": [
+      {
+        "id": "wife-p1",
+        "kind": "photo",
+        "caption": "dinner's ready"
+      }
+    ],
     "story": {
       "start": "dinner",
       "nodes": {
         "dinner": {
           "choices": [
-            { "me": "What's for dinner tonight?", "them": ["meatloaf"], "next": "late" }
+            {
+              "me": "What's for dinner tonight?",
+              "them": [
+                "meatloaf"
+              ],
+              "next": "late"
+            }
           ]
         },
         "late": {
           "choices": [
-            { "me": "Ight ill be late tonight don't wait for me", "them": ["Ok have fun babe"] },
-            { "me": "Ight ill be home on time", "them": ["Ok have fun babe"] }
+            {
+              "me": "Ight ill be late tonight don't wait for me",
+              "them": [
+                "Ok have fun babe"
+              ],
+              "location": "home"
+            },
+            {
+              "me": "Ight ill be home on time",
+              "them": [
+                "Ok have fun babe"
+              ],
+              "location": "home"
+            }
           ]
         }
       }
-    }
+    },
+    "avatar": "/person1.jpg"
   },
   {
     "id": "spy",
@@ -29,23 +54,49 @@
     "location": "Taipei",
     "job": "Definitely not a spy",
     "bio": "Just a normal girl who loves long walks and your product roadmap. (Placeholder bio - Raymond)",
-    "items": [{ "id": "spy-p1", "kind": "photo", "caption": "totally normal photo" }],
+    "items": [
+      {
+        "id": "spy-p1",
+        "kind": "photo",
+        "caption": "totally normal photo"
+      }
+    ],
     "story": {
       "start": "open",
       "nodes": {
         "open": {
           "choices": [
-            { "me": "Heyyy I'm coming to Taiwan soon wyd?", "them": ["You hopefully ;)"], "next": "thursday" },
-            { "me": "Ni hao fine shit", "them": ["???"], "end": "🚫 Alice blocked you" }
+            {
+              "me": "Heyyy I'm coming to Taiwan soon wyd?",
+              "them": [
+                "You hopefully ;)"
+              ],
+              "next": "thursday"
+            },
+            {
+              "me": "Ni hao fine shit",
+              "them": [
+                "???"
+              ],
+              "end": "🚫 Alice blocked you",
+              "blocked": true
+            }
           ]
         },
         "thursday": {
           "choices": [
-            { "me": "Ok bet how about next Thursday?", "them": ["Sounds good <3"] }
+            {
+              "me": "Ok bet how about next Thursday?",
+              "them": [
+                "Sounds good <3"
+              ],
+              "location": "taipei"
+            }
           ]
         }
       }
-    }
+    },
+    "avatar": "/person2.jpg"
   },
   {
     "id": "vp",
@@ -53,23 +104,48 @@
     "location": "Santa Clara",
     "job": "VP, reports directly to you",
     "bio": "Let's take this offline. (Placeholder bio - Raymond)",
-    "items": [{ "id": "vp-p1", "kind": "photo", "caption": "Q3 offsite" }],
+    "items": [
+      {
+        "id": "vp-p1",
+        "kind": "photo",
+        "caption": "Q3 offsite"
+      }
+    ],
     "story": {
       "start": "oneonone",
       "nodes": {
         "oneonone": {
           "choices": [
-            { "me": "Excited for our 1 on 1 later !!", "them": ["Me too :)"], "next": "room" }
+            {
+              "me": "Excited for our 1 on 1 later !!",
+              "them": [
+                "Me too :)"
+              ],
+              "next": "room"
+            }
           ]
         },
         "room": {
           "choices": [
-            { "me": "Do you want to have it in the Blackwell meeting room?", "them": ["Sure sounds good"] },
-            { "me": "Do you want to have it on the outside patio?", "them": ["Sure sounds good"] }
+            {
+              "me": "Do you want to have it in the Blackwell meeting room?",
+              "them": [
+                "Sure sounds good"
+              ],
+              "location": "blackwell"
+            },
+            {
+              "me": "Do you want to have it on the outside patio?",
+              "them": [
+                "Sure sounds good"
+              ],
+              "location": "patio"
+            }
           ]
         }
       }
-    }
+    },
+    "avatar": "/person3.jpg"
   },
   {
     "id": "third",
@@ -77,23 +153,55 @@
     "location": "3rd floor",
     "job": "???",
     "bio": "You don't know me. Yet. (Placeholder bio - Raymond)",
-    "items": [{ "id": "third-p1", "kind": "photo", "caption": "???" }],
+    "items": [
+      {
+        "id": "third-p1",
+        "kind": "photo",
+        "caption": "???"
+      }
+    ],
     "story": {
       "start": "open",
       "nodes": {
         "open": {
           "choices": [
-            { "me": "hey shawty, meet in 3rd floor washroom?", "them": ["What??? Are you sure?"], "next": "sure" },
-            { "me": "hey shawty, meet in the Grace Hopper meeting room?", "them": ["Sure."] }
+            {
+              "me": "hey shawty, meet in 3rd floor washroom?",
+              "them": [
+                "What??? Are you sure?"
+              ],
+              "next": "sure"
+            },
+            {
+              "me": "hey shawty, meet in the Grace Hopper meeting room?",
+              "them": [
+                "Sure."
+              ],
+              "location": "gracehopper"
+            }
           ]
         },
         "sure": {
           "choices": [
-            { "me": "Don't worry it'll be quick.", "them": ["Um ok..."] },
-            { "me": "Yessirr", "them": ["Ew no"] }
+            {
+              "me": "Don't worry it'll be quick.",
+              "them": [
+                "Um ok..."
+              ],
+              "location": "washroom"
+            },
+            {
+              "me": "Yessirr",
+              "them": [
+                "Ew no"
+              ],
+              "blocked": true,
+              "end": "🚫 The Mystery 3rd blocked you"
+            }
           ]
         }
       }
-    }
+    },
+    "avatar": "/person4.jpg"
   }
 ]

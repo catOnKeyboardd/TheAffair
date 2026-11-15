@@ -8,7 +8,8 @@ export default function BottomNav() {
   const path = usePathname();
   const { matches } = useStore();
   const unread = matches.filter(isYourTurn).length;
-  if (path === "/" || path.startsWith("/chat/")) return null; // swipe screen has its own top bar; chat is full height
+  // only the Chats list shows the nav; every other screen is full height
+  if (path !== "/matches") return null;
 
   const tab = (href: string, label: string, active: boolean, badge = 0) => (
     <Link
@@ -24,8 +25,8 @@ export default function BottomNav() {
 
   return (
     <nav className="flex border-t border-line bg-paper">
-      {tab("/", "Swipe", path === "/")}
-      {tab("/matches", "Chats", path === "/matches", unread)}
+      {tab("/", "Swipe", false)}
+      {tab("/matches", "Chats", true, unread)}
     </nav>
   );
 }

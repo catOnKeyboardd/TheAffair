@@ -1,0 +1,31 @@
+{
+  "default": {
+    "intro": "PLACEHOLDER date - Raymond replaces per persona via \"date\" in personas.json",
+    "rounds": [
+      {
+        "options": [
+          { "text": "Compliment their outfit", "heart": 1, "stock": 0, "reply": "aww stop 🙈" },
+          { "text": "Talk about earnings", "heart": -1, "stock": 1, "reply": "...cool. very cool." },
+          { "text": "Gift them a GPU", "heart": 1, "stock": -1, "reply": "omg is that a 5090??" },
+          { "text": "Check your phone", "heart": -1, "stock": 0, "reply": "am I boring you?" }
+        ]
+      },
+      {
+        "options": [
+          { "text": "Ask about their dreams", "heart": 1, "stock": 0, "reply": "nobody ever asks me that 🥺" },
+          { "text": "Announce a new chip mid-date", "heart": -1, "stock": 1, "reply": "are you... doing a keynote right now?" },
+          { "text": "Order the most expensive thing", "heart": 1, "stock": -1, "reply": "big spender 😳", "location": "fancy" },
+          { "text": "Sign their arm with a Sharpie", "heart": 0, "stock": 1, "reply": "...thanks? I guess?" }
+        ]
+      },
+      {
+        "options": [
+          { "text": "\"The more you buy, the more you save\"", "heart": -1, "stock": 1, "reply": "is that a pickup line??" },
+          { "text": "Offer your leather jacket", "heart": 1, "stock": 0, "reply": "it's warm... and smells like ambition" },
+          { "text": "Promise a second date in Q3", "heart": 1, "stock": -1, "reply": "you'd better not delay that launch" },
+          { "text": "Leave early for a keynote", "heart": -1, "stock": 1, "reply": "wow. ok. bye." }
+        ]
+      }
+    ]
+  }
+}

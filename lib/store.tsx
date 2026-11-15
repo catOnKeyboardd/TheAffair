@@ -85,6 +85,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         ...m,
         node: choice.next ?? null,
         over: !choice.next,
+        blocked: !choice.next && !!choice.blocked,
+        location: choice.location,
         messages: choice.end ? [...m.messages, msg("system", choice.end)] : m.messages,
       })),
     );
