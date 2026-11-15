@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- The Wife: generic cartoon character in the app's ink/cream style -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9c7"/>
+      <stop offset="100%" stop-color="#f6b26b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <!-- kitchen tiles -->
+  <g stroke="#30323b" stroke-width="3" opacity="0.25" fill="none">
+    <path d="M0 60 H400 M0 120 H400 M0 180 H400 M60 0 V200 M120 0 V200 M180 0 V200 M240 0 V200 M300 0 V200 M360 0 V200"/>
+  </g>
+  <!-- wall clock: 7:00, dinner time -->
+  <g stroke="#30323b" stroke-width="5" stroke-linecap="round">
+    <circle cx="336" cy="78" r="34" fill="#ffffff"/>
+    <line x1="336" y1="78" x2="336" y2="56"/>
+    <line x1="336" y1="78" x2="322" y2="92"/>
+  </g>
+
+  <g stroke="#30323b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- grey hair, back: short curly volume -->
+    <path d="M104 230 C88 196 96 150 124 128 C130 96 170 80 200 86 C232 78 272 96 278 128 C306 150 314 196 296 230 C306 262 290 292 266 298 L134 298 C110 292 94 262 104 230 Z" fill="#c9c9cf"/>
+    <!-- neck -->
+    <rect x="178" y="296" width="44" height="46" fill="#f1c4a3"/>
+    <!-- body: cardigan -->
+    <path d="M58 500 C62 412 112 346 200 346 C288 346 338 412 342 500 Z" fill="#7de5e9"/>
+    <!-- apron -->
+    <path d="M136 372 C150 360 250 360 264 372 L276 500 L124 500 Z" fill="#ffffff"/>
+    <path d="M150 372 C160 352 176 346 200 346 C224 346 240 352 250 372" fill="none"/>
+    <!-- head -->
+    <ellipse cx="200" cy="218" rx="80" ry="88" fill="#f6cfb0"/>
+    <!-- grey curls on top -->
+    <path d="M122 186 C116 150 140 120 168 122 C176 100 224 100 232 122 C262 118 286 150 278 186 C262 170 248 164 232 168 C222 152 178 152 168 168 C152 164 136 170 122 186 Z" fill="#dcdce2"/>
+  </g>
+  <!-- eyes: content, closed smile eyes -->
+  <path d="M152 222 C160 212 172 212 180 222 M220 222 C228 212 240 212 248 222" fill="none" stroke="#30323b" stroke-width="6" stroke-linecap="round"/>
+  <!-- smile -->
+  <path d="M174 262 C190 278 212 278 228 262" fill="none" stroke="#30323b" stroke-width="6" stroke-linecap="round"/>
+  <!-- blush -->
+  <ellipse cx="146" cy="250" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
+  <ellipse cx="254" cy="250" rx="13" ry="7" fill="#f45caf" opacity="0.45"/>
+  <!-- pearl earrings -->
+  <circle cx="122" cy="248" r="7" fill="#ffffff" stroke="#30323b" stroke-width="4"/>
+  <circle cx="278" cy="248" r="7" fill="#ffffff" stroke="#30323b" stroke-width="4"/>
+  <!-- meatloaf on a dish, held with oven mitts -->
+  <g stroke="#30323b" stroke-width="6" stroke-linejoin="round">
+    <ellipse cx="200" cy="452" rx="112" ry="22" fill="#ffffff"/>
+    <path d="M128 446 C128 408 150 396 200 396 C250 396 272 408 272 446 Z" fill="#8a4b2a"/>
+    <path d="M140 414 C170 404 230 404 260 414" fill="none" stroke="#c0392b" stroke-width="9"/>
+    <!-- mitts -->
+    <path d="M70 470 C60 440 76 420 96 424 L118 440 C124 456 112 476 92 478 Z" fill="#ff2f61"/>
+    <path d="M330 470 C340 440 324 420 304 424 L282 440 C276 456 288 476 308 478 Z" fill="#ff2f61"/>
+  </g>
+  <!-- steam -->
+  <path d="M176 386 C170 374 184 368 178 356 M200 386 C194 374 208 368 202 356 M224 386 C218 374 232 368 226 356" fill="none" stroke="#30323b" stroke-width="4" stroke-linecap="round"/>
+</svg>

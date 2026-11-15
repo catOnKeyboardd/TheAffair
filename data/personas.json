@@ -9,7 +9,8 @@
       {
         "id": "wife-p1",
         "kind": "photo",
-        "caption": "dinner's ready"
+        "caption": "dinner's ready",
+        "src": "/person1.svg"
       }
     ],
     "story": {
@@ -46,7 +47,7 @@
         }
       }
     },
-    "avatar": "/person1.jpg"
+    "avatar": "/person1.svg"
   },
   {
     "id": "spy",
@@ -58,7 +59,8 @@
       {
         "id": "spy-p1",
         "kind": "photo",
-        "caption": "totally normal photo"
+        "caption": "totally normal photo",
+        "src": "/person2.jpg"
       }
     ],
     "story": {
