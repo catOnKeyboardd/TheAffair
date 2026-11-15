@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useStore } from "@/lib/store";
+import { isYourTurn, useStore } from "@/lib/store";
 
 export default function BottomNav() {
   const path = usePathname();
   const { matches } = useStore();
-  const unread = matches.filter((m) => m.unread).length;
+  const unread = matches.filter(isYourTurn).length;
   if (path === "/" || path.startsWith("/chat/")) return null; // swipe screen has its own top bar; chat is full height
 
   const tab = (href: string, label: string, active: boolean, badge = 0) => (
@@ -24,8 +24,8 @@ export default function BottomNav() {
 
   return (
     <nav className="flex border-t border-line bg-paper">
-      {tab("/", "Discover", path === "/")}
-      {tab("/matches", "Matches", path === "/matches", unread)}
+      {tab("/", "Swipe", path === "/")}
+      {tab("/matches", "Chats", path === "/matches", unread)}
     </nav>
   );
 }

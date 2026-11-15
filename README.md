@@ -21,20 +21,37 @@ npm run dev   # http://localhost:3000
 
 Shared contract lives in `lib/types.ts`. Don't change it without telling the group.
 
-## Contracts
-
-- **ProfileDeck** (Kevin): `<ProfileDeck personas onLike={(persona, item, comment) => …} onSkip={(persona) => …} />`
-  Shows `personas[0]`. Liking a photo/prompt + comment = match.
-- **Chat API** (Raymond): `POST /api/chat { personaId, messages } -> { reply }`
-  Use `persona.backstory` as the system prompt. If the API fails, the app shows a fallback line, so the demo never dies.
-- **Add a profile** (anyone): add one entry to `data/personas.json`. Photos go in `public/` (e.g. `"src": "/tess.jpg"`). The first photo is the swipe card photo.
-- **Story scripts** (Raymond): `script` on each persona = scripted texts fired on triggers (`match`, `match:<otherPersonaId>` for jealousy, `date:<option>`). See `ScriptEvent` in `lib/types.ts`.
-- **Personas** (Raymond): see `Persona` in `lib/types.ts`. `items` is the profile scroll (photos + prompts). Photos without `src` render as a placeholder; drop images in `public/` and set `src: "/name.jpg"`.
-
 ## Flow
 
-Discover (scroll profile) → ♥ a prompt + comment → It's a match → Chat → Matches list ("Your turn").
-"reset demo" on the Matches page clears everything for rehearsal.
+Swipe RIGHT → confetti (1.5s) → chat. Swipe LEFT → next profile.
+In the chat Jensen texts first by tapping a reply button; the persona types back; repeat until the story ends.
+"Your affairs" (● button / Chats tab) lists every chat. "reset demo" there clears everything for rehearsal.
+
+## Add or edit a story (no code needed)
+
+Everything lives in `data/personas.json`. Each persona has a `story`, matching Raymond's Figma flowcharts:
+
+```json
+"story": {
+  "start": "open",
+  "nodes": {
+    "open": { "choices": [
+      { "me": "Heyyy I'm coming to Taiwan soon wyd?", "them": ["You hopefully ;)"], "next": "thursday" },
+      { "me": "Ni hao fine shit", "them": ["???"], "end": "🚫 Alice blocked you" }
+    ]},
+    "thursday": { "choices": [
+      { "me": "Ok bet how about next Thursday?", "them": ["Sounds good <3"] }
+    ]}
+  }
+}
+```
+
+- blue box = `me` (a button Jensen taps), diamond = `them` (one or more reply bubbles)
+- `next` = id of the next node. Leave it out and the chat ends there.
+- `end` = optional system line when the chat ends (e.g. blocked)
+- Photos: put the image in `public/` and set `"src": "/alice.jpg"` on the photo item.
+
+Shared types: `lib/types.ts`.
 
 ## Rules
 

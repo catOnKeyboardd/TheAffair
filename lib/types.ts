@@ -4,54 +4,48 @@ export type ProfileItem =
   | { id: string; kind: "photo"; src?: string; caption?: string }
   | { id: string; kind: "prompt"; question: string; answer: string };
 
-// A date invite card shown in chat, with tap-to-reply buttons
-export type DateInvite = { title: string; detail?: string; options: string[] };
-
-// Raymond's story scripts. A persona fires these messages when a trigger happens.
-// after: "match"                 -> right after Jensen matches this persona
-//        "match:<personaId>"     -> when Jensen matches SOMEONE ELSE (jealousy)
-//        "date:<option>"         -> when Jensen taps that option on this persona's date card
-export type ScriptEvent = {
-  after: string;
-  delayMs: number;
-  text?: string;
-  date?: DateInvite;
+// ---- Story (Raymond's Figma flowcharts) ----
+// Blue box  = a choice Jensen can send ("me")
+// Diamond   = the persona's reply ("them")
+// Then either go to the next set of choices ("next") or the chat ends.
+export type StoryChoice = {
+  me: string; // what Jensen sends (button text)
+  them: string[]; // persona's reply bubble(s)
+  next?: string; // id of the next node; leave out to end the chat
+  end?: string; // optional system line at the end, e.g. "🚫 Alice blocked you"
 };
+export type StoryNode = { choices: StoryChoice[] };
+export type Story = { start: string; nodes: Record<string, StoryNode> };
 
 export type Persona = {
   id: string;
   name: string;
-  age: number;
+  age?: number;
   location: string;
   job: string;
   bio: string; // shown on the swipe card
-  items: ProfileItem[]; // photos + Hinge-style prompts. First photo = card photo
-  backstory: string; // Raymond: fed to the LLM as the persona's system prompt
-  openingLine: string; // first text after a match
-  matchDelayMs?: number; // how long Jensen waits in "pending" before the match (the joke)
-  pendingLabel?: string; // e.g. "estimated lead time: 18 weeks"
-  script?: ScriptEvent[];
+  items: ProfileItem[]; // photos (+ optional prompts). First photo = card photo
+  story: Story;
+  backstory?: string; // only needed if we hook up an LLM later
 };
 
 export type ChatMessage = {
   id: string;
-  from: "me" | "them";
+  from: "me" | "them" | "system";
   text: string;
-  likedItem?: ProfileItem; // set on the first message: the thing Jensen liked
-  date?: DateInvite; // set when this message is a date invite card
 };
 
 export type Match = {
   personaId: string;
   messages: ChatMessage[];
-  unread: boolean; // true = "Your turn"
-  status?: "pending" | "matched";
+  node: string | null; // current story node; null = persona typing or chat over
+  over: boolean;
 };
 
 // Swipe deck contract
-export type LikeHandler = (persona: Persona, item: ProfileItem, comment: string) => void;
+export type LikeHandler = (persona: Persona) => void;
 export type SkipHandler = (persona: Persona) => void;
 
-// Chat API contract: POST /api/chat
+// Optional LLM API contract: POST /api/chat (not used by the scripted demo)
 export type ChatRequest = { personaId: string; messages: ChatMessage[] };
 export type ChatResponse = { reply: string };

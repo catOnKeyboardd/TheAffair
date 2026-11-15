@@ -1,13 +1,13 @@
 "use client";
 
-// Kevin's match screen (was match.html), now a popup so app state survives.
+// Kevin's match screen (was match.html). Flashes for ~1.5s, then the Swipe page
+// routes straight into the chat.
 
-import Link from "next/link";
 import { useState } from "react";
 import type { Persona } from "@/lib/types";
 import s from "./MatchModal.module.css";
 
-export default function MatchModal({ persona, onClose }: { persona: Persona; onClose: () => void }) {
+export default function MatchModal({ persona }: { persona: Persona }) {
   const [bits] = useState(() =>
     Array.from({ length: 42 }, () => ({
       left: `${Math.random() * 100}%`,
@@ -34,12 +34,6 @@ export default function MatchModal({ persona, onClose }: { persona: Persona; onC
           IT&apos;S A MATCH!
           <span>♥ YOU &amp; {persona.name.toUpperCase()} ♥</span>
         </h1>
-        <Link href={`/chat/${persona.id}`} onClick={onClose} className={s.btn}>
-          Send a message
-        </Link>
-        <button onClick={onClose} className={`${s.btn} ${s.ghost}`}>
-          Keep swiping
-        </button>
       </div>
 
       <div className={s.confetti}>

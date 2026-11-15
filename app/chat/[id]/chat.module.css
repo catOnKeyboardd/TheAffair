@@ -1,0 +1,242 @@
+/* Kevin's chat design, ported from chat.html */
+
+.chat {
+  --ink: #30323b;
+  --cream: #f7f0e6;
+  --cyan: #7de5e9;
+  --pink: #f45caf;
+  --hot: #ff2f61;
+  --yellow: #ffd42e;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 18px 12px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px 12px;
+  border-bottom: 3px solid var(--ink);
+}
+.back {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 25px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+.avatar {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--cyan);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 900;
+}
+.info {
+  flex: 1;
+  min-width: 0;
+}
+.name {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.status {
+  font-size: 12px;
+  font-weight: 700;
+  color: #777;
+  margin-top: 3px;
+}
+.heart {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--pink);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  text-shadow: 1px 2px var(--ink);
+}
+
+.banner {
+  flex: none;
+  margin: 12px 0 4px;
+  padding: 8px;
+  text-align: center;
+  border: 3px solid var(--ink);
+  border-radius: 15px;
+  background: var(--yellow);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 4px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.divider {
+  align-self: center;
+  padding: 5px 13px;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  background: white;
+  font-size: 10px;
+  font-weight: 900;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 4px;
+}
+.received {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+.sent {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+.bubble {
+  padding: 12px 16px;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.received .bubble {
+  background: white;
+  border-bottom-left-radius: 5px;
+}
+.sent .bubble {
+  background: var(--cyan);
+  border-bottom-right-radius: 5px;
+}
+.time {
+  font-size: 10px;
+  font-weight: 700;
+  color: #888;
+  padding: 0 5px;
+}
+.system {
+  align-self: center;
+  padding: 8px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--hot);
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.typing {
+  display: flex;
+  gap: 5px;
+  padding: 14px 16px;
+}
+.typing span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink);
+  animation: blink 1.2s infinite both;
+}
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+
+.choices {
+  flex: none;
+  padding: 12px 2px 4px;
+  border-top: 3px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.heading {
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+.choice {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  background: white;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.choice:nth-of-type(1) {
+  background: var(--pink);
+}
+.choice:nth-of-type(2) {
+  background: var(--cyan);
+}
+.choice:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 5px 0 var(--ink);
+}
+.choice:active {
+  transform: scale(0.97);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.next {
+  display: block;
+  text-align: center;
+  background: var(--yellow);
+}
+
+.footer {
+  flex: none;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  opacity: 0.45;
+  padding-top: 6px;
+}

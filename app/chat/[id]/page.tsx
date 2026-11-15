@@ -1,89 +1,111 @@
 "use client";
 
+// Chat screen: Kevin's chat.html design, driven by the persona's story (Raymond's flowchart).
+// Jensen picks a reply button -> persona types -> next choices, until the story ends.
+
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import ProfileItemCard from "@/components/ProfileItemCard";
+import { useEffect, useRef } from "react";
+import { personas } from "@/lib/personas";
 import { getPersona, useStore } from "@/lib/store";
+import s from "./chat.module.css";
 
 export default function Chat() {
   const { id } = useParams<{ id: string }>();
   const persona = getPersona(id);
-  const { matches, typing, send, markRead } = useStore();
+  const { matches, typing, choose, seen } = useStore();
   const match = matches.find((m) => m.personaId === id);
-  const [text, setText] = useState("");
   const bottom = useRef<HTMLDivElement>(null);
 
   const count = match?.messages.length ?? 0;
+  const isTyping = !!typing[id];
   useEffect(() => {
-    markRead(id);
     bottom.current?.scrollIntoView({ behavior: "smooth" });
-  }, [id, count, typing[id], markRead]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [count, isTyping, match?.node]);
 
   if (!persona || !match) {
     return (
-      <div className="p-8 text-center">
-        <p className="text-muted">No chat here.</p>
-        <Link href="/matches" className="underline">Back to matches</Link>
+      <div className={s.chat}>
+        <p style={{ textAlign: "center", marginTop: 40 }}>No chat here.</p>
+        <Link href="/" className={`${s.choice} ${s.next}`}>
+          Back to swiping
+        </Link>
       </div>
     );
   }
 
-  const submit = () => {
-    const t = text.trim();
-    if (!t || typing[id]) return;
-    setText("");
-    send(id, t);
-  };
+  const photo = persona.items.find((i) => i.kind === "photo");
+  const node = match.node ? persona.story.nodes[match.node] : null;
+  const blocked = match.messages.some((m) => m.from === "system" && m.text.includes("blocked"));
+  const moreToSwipe = personas.some((p) => !seen.includes(p.id));
 
   return (
-    <div className="flex h-full flex-col">
-      <header className="flex items-center gap-3 border-b border-line bg-paper px-4 py-3">
-        <Link href="/matches" className="text-2xl text-muted">‹</Link>
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent font-serif text-white">{persona.name[0]}</div>
-        <span className="font-semibold">{persona.name}</span>
-      </header>
+    <div className={s.chat}>
+      <div className={s.header}>
+        <Link href="/matches" className={s.back} aria-label="Back">
+          ‹
+        </Link>
+        {photo?.kind === "photo" && photo.src ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={photo.src} alt={persona.name} className={s.avatar} />
+        ) : (
+          <div className={s.avatar}>{persona.name[0]}</div>
+        )}
+        <div className={s.info}>
+          <div className={s.name}>{persona.name}</div>
+          <div className={s.status}>{isTyping ? "typing…" : blocked ? "🚫 blocked you" : "♥ Matched with you"}</div>
+        </div>
+        <div className={s.heart}>♥</div>
+      </div>
 
-      <div className="flex-1 space-y-2 overflow-y-auto px-4 py-4">
-        {match.messages.map((m) => (
-          <div key={m.id} className={`flex flex-col ${m.from === "me" ? "items-end" : "items-start"}`}>
-            {m.likedItem && (
-              <div className="mb-1 w-3/4 opacity-90">
-                <p className="mb-1 text-right text-xs text-muted">You liked their {m.likedItem.kind}</p>
-                <ProfileItemCard item={m.likedItem} persona={persona} small />
-              </div>
-            )}
-            <div
-              className={`max-w-[75%] rounded-2xl px-4 py-2 ${
-                m.from === "me" ? "rounded-br-sm bg-ink text-white" : "rounded-bl-sm bg-paper text-ink"
-              }`}
-            >
+      <div className={s.banner}>♥ IT&apos;S A MATCH! YOU AND {persona.name.toUpperCase()} LIKE EACH OTHER ♥</div>
+
+      <div className={s.messages}>
+        <div className={s.divider}>TODAY</div>
+        {match.messages.map((m) =>
+          m.from === "system" ? (
+            <div key={m.id} className={s.system}>
               {m.text}
             </div>
-          </div>
-        ))}
-        {typing[id] && (
-          <div className="flex w-fit gap-1 rounded-2xl rounded-bl-sm bg-paper px-4 py-3">
-            <span className="dot h-2 w-2 rounded-full bg-muted" />
-            <span className="dot h-2 w-2 rounded-full bg-muted" />
-            <span className="dot h-2 w-2 rounded-full bg-muted" />
+          ) : (
+            <div key={m.id} className={`${s.row} ${m.from === "me" ? s.sent : s.received}`}>
+              <div className={s.bubble}>{m.text}</div>
+              <div className={s.time}>{m.from === "me" ? "You" : persona.name} · Just now</div>
+            </div>
+          ),
+        )}
+        {isTyping && (
+          <div className={`${s.row} ${s.received}`}>
+            <div className={`${s.bubble} ${s.typing}`}>
+              <span />
+              <span />
+              <span />
+            </div>
           </div>
         )}
         <div ref={bottom} />
       </div>
 
-      <div className="flex gap-2 border-t border-line bg-paper p-3">
-        <input
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && submit()}
-          placeholder="Send a message"
-          className="flex-1 rounded-full border border-line bg-cream px-4 py-2 outline-none"
-        />
-        <button onClick={submit} className="rounded-full bg-ink px-4 font-semibold text-white disabled:opacity-40" disabled={!text.trim()}>
-          Send
-        </button>
-      </div>
+      {node && !isTyping && (
+        <div className={s.choices}>
+          <div className={s.heading}>✦ HOW DO YOU WANT TO RESPOND? ✦</div>
+          {node.choices.map((c) => (
+            <button key={c.me} className={s.choice} onClick={() => choose(id, c)}>
+              {c.me}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {match.over && (
+        <div className={s.choices}>
+          <Link href={moreToSwipe ? "/" : "/matches"} className={`${s.choice} ${s.next}`}>
+            {moreToSwipe ? "Keep swiping →" : "See all your affairs →"}
+          </Link>
+        </div>
+      )}
+
+      <div className={s.footer}>JINGE ♥ THE AFFAIR</div>
     </div>
   );
 }

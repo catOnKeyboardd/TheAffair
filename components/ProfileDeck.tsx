@@ -1,13 +1,13 @@
 "use client";
 
 // KEVIN OWNS THIS FILE. Ported from his original index.html.
-// Contract: show personas[0]; call onLike(persona, item, comment) or onSkip(persona).
+// Contract: show personas[0]; call onLike(persona) or onSkip(persona).
 // Swipe right / ♥ = like, swipe left / × = skip. Tap the photo to see the next one.
 // Styles live in ProfileDeck.module.css.
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { useStore } from "@/lib/store";
+import { isYourTurn, useStore } from "@/lib/store";
 import type { LikeHandler, Persona, ProfileItem, SkipHandler } from "@/lib/types";
 import s from "./ProfileDeck.module.css";
 
@@ -19,7 +19,7 @@ const SWIPE_PX = 100;
 export default function ProfileDeck({ personas, onLike, onSkip }: Props) {
   const persona = personas[0];
   const { matches } = useStore();
-  const unread = matches.filter((m) => m.unread).length;
+  const unread = matches.filter(isYourTurn).length;
 
   const [photoIdx, setPhotoIdx] = useState(0);
   const [dx, setDx] = useState(0);
@@ -60,7 +60,7 @@ export default function ProfileDeck({ personas, onLike, onSkip }: Props) {
     if (leaving) return;
     setLeaving(dir);
     setTimeout(() => {
-      if (dir === 1) onLike(persona, photo ?? persona.items[0], "♥");
+      if (dir === 1) onLike(persona);
       else onSkip(persona);
     }, 250);
   };
@@ -135,7 +135,8 @@ export default function ProfileDeck({ personas, onLike, onSkip }: Props) {
 
         <section className={s.copy}>
           <h1 className={s.name}>
-            {persona.name}, {persona.age}
+            {persona.name}
+            {persona.age ? `, ${persona.age}` : ""}
           </h1>
           <div className={s.job}>{persona.job}</div>
           <p className={s.bio}>{persona.bio}</p>
