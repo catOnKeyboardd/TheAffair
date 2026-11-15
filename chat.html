@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Affair - Chat</title>
+
+<style>
+:root {
+    --ink: #30323b;
+    --cream: #f7f0e6;
+    --cyan: #7de5e9;
+    --pink: #f45caf;
+    --hot: #ff2f61;
+    --yellow: #ffd42e;
+    --green: #00d84a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: var(--ink);
+    background: #ffd735 radial-gradient(#c7a52c 2px, transparent 2.5px);
+    background-size: auto, 28px 28px;
+    font-family: ui-rounded, "Arial Rounded MT Bold",
+        "Trebuchet MS", system-ui, sans-serif;
+}
+
+/* ================================
+   PHONE FRAME
+================================ */
+
+.phone {
+    position: relative;
+    width: min(100vw, 570px);
+    height: min(100svh, 1100px);
+    min-height: 690px;
+    background: var(--cream);
+    border: 8px solid var(--ink);
+    border-radius: 82px 82px 0 0;
+    padding: 22px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 5px #f7f0e6;
+    overflow: hidden;
+}
+
+/* STATUS BAR */
+
+.status {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    font-size: 19px;
+    font-weight: 800;
+    flex: none;
+}
+
+.dynamic {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 145px;
+    height: 43px;
+    border-radius: 30px;
+    background: var(--ink);
+}
+
+.status-icons {
+    letter-spacing: 3px;
+    font-size: 17px;
+}
+
+/* ================================
+   CHAT HEADER
+================================ */
+
+.chat-header {
+    height: 95px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 8px 5px;
+    border-bottom: 3px solid var(--ink);
+}
+
+.back-button {
+    width: 38px;
+    height: 38px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-family: inherit;
+    flex: none;
+}
+
+.back-button:active {
+    transform: scale(.9);
+}
+
+.profile-avatar {
+    width: 57px;
+    height: 57px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--cyan);
+    flex: none;
+}
+
+.header-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.header-name {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+.header-status {
+    font-size: 12px;
+    font-weight: 700;
+    color: #777;
+    margin-top: 4px;
+}
+
+.heart-icon {
+    width: 42px;
+    height: 42px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--pink);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    text-shadow: 1px 2px var(--ink);
+    flex: none;
+}
+
+/* ================================
+   MATCH BANNER
+================================ */
+
+.match-banner {
+    margin: 13px 0 5px;
+    padding: 9px;
+    text-align: center;
+    border: 3px solid var(--ink);
+    border-radius: 15px;
+    background: var(--yellow);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    flex: none;
+}
+
+/* ================================
+   MESSAGES
+================================ */
+
+.messages {
+    flex: 1;
+    min-height: 0;
+    padding: 17px 5px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink) transparent;
+}
+
+.day-divider {
+    align-self: center;
+    padding: 5px 13px;
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    background: white;
+    font-size: 10px;
+    font-weight: 900;
+    margin: 3px 0;
+}
+
+.message-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    gap: 4px;
+}
+
+.message-row.received {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.message-row.sent {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.message {
+    padding: 13px 16px;
+    border: 3px solid var(--ink);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.received .message {
+    background: white;
+    border-bottom-left-radius: 5px;
+}
+
+.sent .message {
+    background: var(--cyan);
+    border-bottom-right-radius: 5px;
+}
+
+.message-time {
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+    padding: 0 5px;
+}
+
+/* ================================
+   REPLY CHOICES
+================================ */
+
+.choices {
+    flex: none;
+    padding: 14px 2px 12px;
+    border-top: 3px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choice-heading {
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.choice-button {
+    width: 100%;
+    min-height: 49px;
+    padding: 11px 15px;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    background: white;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform .12s, box-shadow .12s;
+}
+
+.choice-button:nth-of-type(1) {
+    background: var(--pink);
+}
+
+.choice-button:nth-of-type(2) {
+    background: var(--cyan);
+}
+
+.choice-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 5px 0 var(--ink);
+}
+
+.choice-button:active {
+    transform: scale(.97);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.choice-button:disabled {
+    opacity: .45;
+    cursor: default;
+}
+
+.footer {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    opacity: .45;
+    padding-top: 7px;
+    flex: none;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media(max-height:760px) {
+    .phone {
+        min-height: 0;
+        height: 100svh;
+        border-radius: 48px 48px 0 0;
+        padding: 12px 20px 12px;
+    }
+
+    .status {
+        height: 40px;
+    }
+
+    .chat-header {
+        height: 76px;
+    }
+
+    .match-banner {
+        margin: 8px 0 3px;
+    }
+
+    .messages {
+        padding: 10px 5px;
+        gap: 10px;
+    }
+
+    .choices {
+        padding-top: 9px;
+        gap: 7px;
+    }
+
+    .choice-button {
+        min-height: 42px;
+        padding: 8px 12px;
+    }
+}
+
+@media(min-width:700px) {
+    .phone {
+        height: min(96svh, 1100px);
+        border-radius: 82px;
+        border-bottom-width: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="phone">
+
+    <!-- STATUS BAR -->
+    <div class="status">
+        <span>9:41</span>
+        <span class="dynamic"></span>
+        <span class="status-icons">▮▮▮ ◉ ▰</span>
+    </div>
+
+    <!-- CHAT HEADER -->
+    <div class="chat-header">
+
+        <button class="back-button"
+            onclick="history.back()"
+            aria-label="Go back">‹</button>
+
+        <img src="image2.jpg"
+            class="profile-avatar"
+            alt="Alex">
+
+        <div class="header-info">
+            <div class="header-name">Alex Morgan</div>
+            <div class="header-status">♥ Matched with you</div>
+        </div>
+
+        <div class="heart-icon">♥</div>
+
+    </div>
+
+    <!-- MATCH BANNER -->
+    <div class="match-banner">
+        ♥ IT'S A MATCH! YOU AND ALEX LIKE EACH OTHER ♥
+    </div>
+
+    <!-- MESSAGES -->
+    <div class="messages" id="messages">
+
+        <div class="day-divider">TODAY</div>
+
+        <div class="message-row received">
+            <div class="message">
+                Hey! Glad we matched :)
+            </div>
+            <div class="message-time">Alex · Just now</div>
+        </div>
+
+    </div>
+
+    <!-- REPLY CHOICES -->
+    <div class="choices" id="choices">
+
+        <div class="choice-heading">
+            ✦ HOW DO YOU WANT TO RESPOND? ✦
+        </div>
+
+        <button class="choice-button" onclick="sendMessage(1)">
+            message1_user
+        </button>
+
+        <button class="choice-button" onclick="sendMessage(2)">
+            message2_user
+        </button>
+
+    </div>
+
+    <div class="footer">THE AFFAIR ♥</div>
+
+</main>
+
+<script>
+
+/* =====================================
+   EDIT YOUR MESSAGES HERE
+===================================== */
+
+// The two possible messages the user can send
+const message1_user = "message1_user";
+const message2_user = "message2_user";
+
+// The automatic replies
+const message1_chat = "message1_chat";
+const message2_chat = "message2_chat";
+
+// =====================================
+// CHAT LOGIC - NO NEED TO EDIT BELOW
+// =====================================
+
+let alreadyReplied = false;
+
+function sendMessage(number) {
+
+    if (alreadyReplied) return;
+
+    const messages = document.getElementById("messages");
+
+    const userText = number === 1
+        ? message1_user
+        : message2_user;
+
+    const chatText = number === 1
+        ? message1_chat
+        : message2_chat;
+
+    // Create user's message
+    const userRow = document.createElement("div");
+    userRow.className = "message-row sent";
+
+    const userMessage = document.createElement("div");
+    userMessage.className = "message";
+    userMessage.textContent = userText;
+
+    const userTime = document.createElement("div");
+    userTime.className = "message-time";
+    userTime.textContent = "You · Just now";
+
+    userRow.appendChild(userMessage);
+    userRow.appendChild(userTime);
+
+    messages.appendChild(userRow);
+
+    // Hide reply choices
+    document.getElementById("choices").style.display = "none";
+
+    alreadyReplied = true;
+
+    messages.scrollTop = messages.scrollHeight;
+
+    // Automatically show Alex's reply
+    setTimeout(() => {
+
+        const chatRow = document.createElement("div");
+        chatRow.className = "message-row received";
+
+        const chatMessage = document.createElement("div");
+        chatMessage.className = "message";
+        chatMessage.textContent = chatText;
+
+        const chatTime = document.createElement("div");
+        chatTime.className = "message-time";
+        chatTime.textContent = "Alex · Just now";
+
+        chatRow.appendChild(chatMessage);
+        chatRow.appendChild(chatTime);
+
+        messages.appendChild(chatRow);
+
+        messages.scrollTop = messages.scrollHeight;
+
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>
