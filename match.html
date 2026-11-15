@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>It's a Match! — The Affair</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;height:100%;overflow:hidden}
+body{display:grid;place-items:center;background:#ff8fc9;font-family:ui-rounded,"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;color:#fff}
+.scene{position:relative;width:100%;height:100%;min-height:560px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 42%,#ffb6dc 0 0,transparent 42%),linear-gradient(145deg,#ff8fc9,#f45caf)}
+h1{position:relative;z-index:2;margin:0;text-align:center;font-size:clamp(54px,13vw,116px);line-height:.95;font-weight:1000;letter-spacing:-4px;color:#fff;text-shadow:5px 6px 0 #30323b,-2px -2px 0 #30323b,2px -2px 0 #30323b,-2px 2px 0 #30323b,2px 2px 0 #30323b;transform:rotate(-5deg);padding:20px}
+h1 span{display:block;font-size:.48em;letter-spacing:5px;margin-top:18px;color:#ffe65b;text-shadow:3px 4px 0 #30323b,-1px -1px 0 #30323b,1px -1px 0 #30323b,-1px 1px 0 #30323b,1px 1px 0 #30323b}
+.bubble{position:absolute;border:4px solid #30323b;border-radius:50%;background:#ffe65b;box-shadow:inset -7px -8px 0 #f6c83c}
+.b1{width:100px;height:100px;top:12%;left:9%}.b2{width:54px;height:54px;right:12%;top:20%;background:#8be9eb}.b3{width:72px;height:72px;bottom:15%;left:13%;background:#a9ed7d}.b4{width:125px;height:125px;bottom:8%;right:8%;background:#8be9eb}
+.star{position:absolute;color:#ffe65b;font-size:clamp(35px,8vw,75px);-webkit-text-stroke:3px #30323b;text-shadow:3px 4px 0 #30323b;animation:float 3s ease-in-out infinite}
+.s1{top:17%;left:36%}.s2{right:26%;top:37%;animation-delay:-1s}.s3{bottom:17%;left:42%;animation-delay:-2s}.s4{top:58%;left:8%;font-size:42px}
+.confetti{position:absolute;inset:0;pointer-events:none}
+.confetti i{position:absolute;width:12px;height:25px;border:2px solid #30323b;border-radius:4px;background:#ffe65b;transform:rotate(25deg);animation:fall 5s linear infinite}
+.confetti i:nth-child(3n){background:#8be9eb}.confetti i:nth-child(4n){background:#a9ed7d}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(10deg)}}
+@keyframes fall{0%{transform:translateY(-15vh) rotate(0)}100%{transform:translateY(115vh) rotate(600deg)}}
+</style>
+</head>
+<body>
+<main class="scene">
+  <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div>
+  <div class="star s1">★</div><div class="star s2">✦</div><div class="star s3">★</div><div class="star s4">✧</div>
+  <h1>IS A MATCH!<span>♥ THE AFFAIR ♥</span></h1>
+  <div class="confetti" id="confetti"></div>
+</main>
+<script>
+const layer=document.getElementById("confetti");
+for(let i=0;i<42;i++){
+  const bit=document.createElement("i");
+  bit.style.left=(Math.random()*100)+"%";
+  bit.style.animationDelay=(-Math.random()*5)+"s";
+  bit.style.animationDuration=(3.5+Math.random()*3)+"s";
+  bit.style.width=(7+Math.random()*9)+"px";
+  bit.style.height=(12+Math.random()*17)+"px";
+  layer.appendChild(bit);
+}
+</script>
+</body>
+</html>
