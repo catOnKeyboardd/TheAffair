@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+  <defs><radialGradient id="g" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#7a2141"/><stop offset="1" stop-color="#2a0f1f"/></radialGradient></defs>
+  <rect width="400" height="800" fill="url(#g)"/>
+  <!-- curtains -->
+  <g fill="#9e1f3f" stroke="#30323b" stroke-width="6"><path d="M0 0 h70 q-20 260 10 520 h-80z"/><path d="M400 0 h-70 q20 260 -10 520 h80z"/></g>
+  <!-- chandelier -->
+  <g stroke="#30323b" stroke-width="5" fill="#d4a24c"><line x1="200" y1="0" x2="200" y2="80"/><path d="M130 110 q70 50 140 0" fill="none"/><circle cx="200" cy="90" r="16"/><circle cx="140" cy="112" r="10"/><circle cx="260" cy="112" r="10"/></g>
+  <g fill="#ffe8a3"><circle cx="140" cy="94" r="6"/><circle cx="200" cy="70" r="6"/><circle cx="260" cy="94" r="6"/></g>
+  <!-- floor + table -->
+  <rect x="0" y="520" width="400" height="280" fill="#1a0a12"/>
+  <path d="M40 600 L360 600 L380 670 L20 670 Z" fill="#f7f0e6" stroke="#30323b" stroke-width="6" stroke-linejoin="round"/>
+  <!-- candles -->
+  <g stroke="#30323b" stroke-width="4"><rect x="110" y="560" width="14" height="40" fill="#fff"/><rect x="276" y="560" width="14" height="40" fill="#fff"/></g>
+  <g fill="#ffd42e"><path d="M117 540 q8 12 0 20 q-8 -8 0 -20z"/><path d="M283 540 q8 12 0 20 q-8 -8 0 -20z"/></g>
+  <!-- wine glasses -->
+  <g stroke="#30323b" stroke-width="4" fill="#9e1f3f"><path d="M170 570 h24 q0 24 -12 26 q-12 -2 -12 -26z"/><path d="M206 570 h24 q0 24 -12 26 q-12 -2 -12 -26z"/></g>
+  <g stroke="#30323b" stroke-width="4"><line x1="182" y1="596" x2="182" y2="610"/><line x1="218" y1="596" x2="218" y2="610"/></g>
+  <text x="200" y="740" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-weight="900" font-size="16" fill="#d4a24c">💸 ONE (1) BREADSTICK: $400</text>
+</svg>

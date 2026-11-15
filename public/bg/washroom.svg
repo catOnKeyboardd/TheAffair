@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="tile" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#bfeeee"/><path d="M40 0 H0 V40" fill="none" stroke="#8fd4d4" stroke-width="3"/></pattern></defs>
+  <rect width="400" height="800" fill="url(#tile)"/>
+  <!-- 3F sign -->
+  <rect x="150" y="30" width="100" height="44" rx="8" fill="#30323b"/>
+  <text x="200" y="61" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-weight="900" font-size="22" fill="#ffd42e">3F 🚻</text>
+  <!-- mirror -->
+  <rect x="60" y="110" width="280" height="150" rx="14" fill="#e9fbff" stroke="#30323b" stroke-width="6"/>
+  <path d="M90 130 l40 40 M110 130 l60 60" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <!-- sinks counter -->
+  <rect x="40" y="280" width="320" height="40" rx="8" fill="#f7f0e6" stroke="#30323b" stroke-width="6"/>
+  <g fill="#fff" stroke="#30323b" stroke-width="5"><ellipse cx="130" cy="300" rx="36" ry="10"/><ellipse cx="270" cy="300" rx="36" ry="10"/></g>
+  <g stroke="#30323b" stroke-width="5" stroke-linecap="round"><path d="M130 280 v-14 h14"/><path d="M270 280 v-14 h14"/></g>
+  <!-- stall doors -->
+  <g fill="#ff9fc9" stroke="#30323b" stroke-width="6"><rect x="0" y="420" width="110" height="300"/><rect x="290" y="420" width="110" height="300"/></g>
+  <g fill="#ff2f61" stroke="#30323b" stroke-width="3"><rect x="80" y="560" width="16" height="10" rx="3"/><rect x="304" y="560" width="16" height="10" rx="3"/></g>
+  <rect x="0" y="720" width="400" height="80" fill="#8fd4d4"/>
+  <!-- wet floor sign -->
+  <path d="M190 720 l20 -60 l20 60z" fill="#ffd42e" stroke="#30323b" stroke-width="5" stroke-linejoin="round"/>
+</svg>

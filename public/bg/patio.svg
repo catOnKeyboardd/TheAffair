@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fcfff"/><stop offset="1" stop-color="#d6f4ff"/></linearGradient></defs>
+  <rect width="400" height="800" fill="url(#sky)"/>
+  <circle cx="320" cy="100" r="40" fill="#ffd42e" stroke="#30323b" stroke-width="6"/>
+  <g fill="#fff" stroke="#30323b" stroke-width="5"><path d="M40 150 q20 -30 50 -10 q30 -20 50 10 q20 20 -10 30 h-80 q-30 -10 -10 -30z"/></g>
+  <!-- office building edge -->
+  <rect x="0" y="200" width="90" height="360" fill="#c9d6df" stroke="#30323b" stroke-width="6"/>
+  <g fill="#7de5e9" stroke="#30323b" stroke-width="3"><rect x="14" y="220" width="26" height="36"/><rect x="50" y="220" width="26" height="36"/><rect x="14" y="276" width="26" height="36"/><rect x="50" y="276" width="26" height="36"/><rect x="14" y="332" width="26" height="36"/><rect x="50" y="332" width="26" height="36"/></g>
+  <!-- grass / deck -->
+  <rect x="0" y="560" width="400" height="240" fill="#d9a066"/>
+  <g stroke="#b5803f" stroke-width="4"><line x1="0" y1="610" x2="400" y2="610"/><line x1="0" y1="660" x2="400" y2="660"/><line x1="0" y1="710" x2="400" y2="710"/></g>
+  <rect x="0" y="540" width="400" height="24" fill="#8fd16a" stroke="#30323b" stroke-width="5"/>
+  <!-- umbrella table -->
+  <g stroke="#30323b" stroke-width="6" stroke-linejoin="round">
+    <path d="M250 330 Q330 270 410 330 Z" fill="#ff2f61"/><line x1="330" y1="320" x2="330" y2="620"/>
+    <ellipse cx="330" cy="620" rx="56" ry="14" fill="#fff"/>
+  </g>
+  <!-- plants -->
+  <g stroke="#30323b" stroke-width="5"><path d="M110 560 h40 l-6 -50 h-28z" fill="#ff9f43"/><path d="M130 510 q-30 -60 0 -90 q30 30 0 90z" fill="#8fd16a"/></g>
+</svg>

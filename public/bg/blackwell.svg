@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="800" fill="#121512"/>
+  <!-- glass wall panels -->
+  <g stroke="#2b3a24" stroke-width="5"><line x1="100" y1="0" x2="100" y2="520"/><line x1="300" y1="0" x2="300" y2="520"/></g>
+  <!-- big screen -->
+  <rect x="60" y="90" width="280" height="160" rx="12" fill="#0c1a06" stroke="#30323b" stroke-width="7"/>
+  <rect x="72" y="102" width="256" height="136" rx="6" fill="#1f3a12"/>
+  <path d="M90 210 L140 180 L180 196 L230 140 L270 160 L310 118" fill="none" stroke="#76b900" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="135" text-anchor="middle" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-weight="900" font-size="22" fill="#76b900">BLACKWELL</text>
+  <rect x="0" y="40" width="400" height="10" fill="#76b900" opacity="0.25"/>
+  <!-- floor -->
+  <rect x="0" y="520" width="400" height="280" fill="#1b1f1a"/>
+  <!-- table -->
+  <path d="M30 600 L370 600 L400 680 L0 680 Z" fill="#2c2c34" stroke="#30323b" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="0" y="680" width="400" height="18" fill="#1d1d24"/>
+  <!-- chairs -->
+  <g fill="#30323b" stroke="#0a0a0c" stroke-width="5"><rect x="20" y="540" width="60" height="60" rx="12"/><rect x="320" y="540" width="60" height="60" rx="12"/></g>
+  <!-- laptops glow -->
+  <g fill="#76b900" opacity="0.8"><rect x="60" y="620" width="40" height="8" rx="3"/><rect x="300" y="620" width="40" height="8" rx="3"/></g>
+</svg>

@@ -1,37 +1,37 @@
 {
   "home": {
     "name": "Home, dinner table",
-    "image": "/bg-home.jpg",
+    "image": "/bg/home.svg",
     "gradient": "linear-gradient(180deg, #ffd9a8 0%, #f6b26b 60%, #b9733b 100%)"
   },
   "taipei": {
     "name": "Taipei night market",
-    "image": "/bg-taipei.jpg",
+    "image": "/bg/taipei.svg",
     "gradient": "linear-gradient(180deg, #1d1b4b 0%, #8a2be2 55%, #ff6f61 100%)"
   },
   "blackwell": {
     "name": "Blackwell meeting room",
-    "image": "/bg-blackwell.jpg",
+    "image": "/bg/blackwell.svg",
     "gradient": "linear-gradient(180deg, #0b0f0a 0%, #1f3a12 55%, #76b900 100%)"
   },
   "patio": {
     "name": "The outside patio",
-    "image": "/bg-patio.jpg",
+    "image": "/bg/patio.svg",
     "gradient": "linear-gradient(180deg, #87d7ff 0%, #c9f0ff 55%, #8fd16a 100%)"
   },
   "gracehopper": {
     "name": "Grace Hopper meeting room",
-    "image": "/bg-gracehopper.jpg",
+    "image": "/bg/gracehopper.svg",
     "gradient": "linear-gradient(180deg, #2b2d42 0%, #4f5d75 55%, #bfc0c0 100%)"
   },
   "washroom": {
     "name": "3rd floor washroom",
-    "image": "/bg-washroom.jpg",
+    "image": "/bg/washroom.svg",
     "gradient": "linear-gradient(180deg, #e0f7f7 0%, #a6e3e3 55%, #6cc5c5 100%)"
   },
   "fancy": {
     "name": "A very fancy restaurant",
-    "image": "/bg-fancy.jpg",
+    "image": "/bg/fancy.svg",
     "gradient": "linear-gradient(180deg, #2a0f1f 0%, #6b1d3a 55%, #d4a24c 100%)"
   }
 }

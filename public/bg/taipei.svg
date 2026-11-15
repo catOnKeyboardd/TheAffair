@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d1b4b"/><stop offset="0.6" stop-color="#5b2a86"/><stop offset="1" stop-color="#c2477a"/></linearGradient></defs>
+  <rect width="400" height="800" fill="url(#sky)"/>
+  <g fill="#fff" opacity="0.8"><circle cx="40" cy="60" r="2"/><circle cx="120" cy="30" r="1.5"/><circle cx="350" cy="80" r="2"/><circle cx="260" cy="40" r="1.5"/><circle cx="80" cy="140" r="1.5"/></g>
+  <circle cx="330" cy="130" r="28" fill="#ffe8a3" stroke="#30323b" stroke-width="5"/>
+  <!-- Taipei 101 -->
+  <g fill="#2a2850" stroke="#30323b" stroke-width="5" stroke-linejoin="round">
+    <rect x="186" y="60" width="8" height="50"/>
+    <path d="M170 110 h40 l-4 40 h-32z"/><path d="M166 150 h48 l-4 40 h-40z"/><path d="M162 190 h56 l-4 40 h-48z"/>
+    <path d="M158 230 h64 l-4 40 h-56z"/><path d="M154 270 h72 l-4 40 h-64z"/><path d="M150 310 h80 v130 h-80z"/>
+  </g>
+  <!-- skyline -->
+  <path d="M0 440 V360 h50 v-40 h40 v60 h40 v-30 h20 v50 h100 v-40 h40 v-60 h50 v50 h60 V440z" fill="#241f45" stroke="#30323b" stroke-width="5"/>
+  <!-- lantern string -->
+  <path d="M0 210 Q100 260 200 215 T400 215" fill="none" stroke="#30323b" stroke-width="3"/>
+  <g stroke="#30323b" stroke-width="4"><ellipse cx="50" cy="240" rx="14" ry="18" fill="#ff2f61"/><ellipse cx="130" cy="246" rx="14" ry="18" fill="#ffd42e"/><ellipse cx="270" cy="236" rx="14" ry="18" fill="#ff2f61"/><ellipse cx="350" cy="232" rx="14" ry="18" fill="#ffd42e"/></g>
+  <!-- stalls -->
+  <rect x="0" y="440" width="400" height="360" fill="#3a2a3f"/>
+  <g stroke="#30323b" stroke-width="5" stroke-linejoin="round">
+    <path d="M-10 470 h140 l-10 40 h-120z" fill="#ff2f61"/><rect x="0" y="510" width="120" height="120" fill="#5b3a2e"/>
+    <path d="M270 470 h140 l-10 40 h-120z" fill="#7de5e9"/><rect x="280" y="510" width="120" height="120" fill="#5b3a2e"/>
+  </g>
+  <g font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-weight="900" font-size="18" fill="#ffd42e" stroke="#30323b" stroke-width="4" paint-order="stroke">
+    <text x="16" y="498">臭豆腐</text><text x="292" y="498">珍珠奶茶</text>
+  </g>
+  <rect x="0" y="700" width="400" height="100" fill="#2b2033"/>
+</svg>
