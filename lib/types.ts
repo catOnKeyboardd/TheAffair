@@ -28,7 +28,10 @@ export type DateOption = {
   location?: string; // optional: switch the background (key in data/locations.json)
   glowUp?: boolean; // advance the persona to the next avatarStages look, with sparkles
 };
-export type DateRound = { options: DateOption[] }; // 4 options each
+export type DateRound = {
+  scene?: string; // situation line shown at the start of the round, e.g. "🚪 Someone knocks…"
+  options: DateOption[]; // 4 options each
+};
 export type DateSim = { intro?: string; rounds: DateRound[] };
 
 export type Persona = {

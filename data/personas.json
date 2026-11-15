@@ -264,7 +264,99 @@
     },
     "avatar": "/person3.svg",
     "age": 41,
-    "lookingFor": "Something 1:1"
+    "lookingFor": "Something 1:1",
+    "date": {
+      "intro": "Officially a 1:1. Calendar invite: \"Sync on Q3 roadmap\". Room booked for 30 min.",
+      "rounds": [
+        {
+          "scene": "📋 She slides a printed agenda across the table. Item 1: \"us\". \"So… what's on the agenda?\"",
+          "options": [
+            {
+              "text": "\"Let's skip the slides.\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "finally. I hate slides 😌"
+            },
+            {
+              "text": "\"First, Q3 numbers.\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "…wow. romantic."
+            },
+            {
+              "text": "Gift her a Blackwell chip 🎁",
+              "heart": 1,
+              "stock": -1,
+              "reply": "you can't just give these away?? (I'm keeping it)"
+            },
+            {
+              "text": "\"Is this meeting being recorded?\"",
+              "heart": -1,
+              "stock": 0,
+              "reply": "…it is now 🙂"
+            }
+          ]
+        },
+        {
+          "scene": "🚪 *knock knock* \"Hey, is this room free?\"",
+          "options": [
+            {
+              "text": "\"We're in a critical design review.\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "smooth. very smooth."
+            },
+            {
+              "text": "Extend the booking to 2 hours",
+              "heart": 1,
+              "stock": -1,
+              "reply": "you blocked out the whole board meeting for me?? 🥺"
+            },
+            {
+              "text": "\"Come in, we're done here.\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "…oh. ok then."
+            },
+            {
+              "text": "Hide under the table",
+              "heart": 0,
+              "stock": -1,
+              "reply": "Jensen. you are the CEO."
+            }
+          ]
+        },
+        {
+          "scene": "⏰ The booking ends in 2 minutes. \"So… where do we go from here?\"",
+          "options": [
+            {
+              "text": "\"Let's take this offline 😏\"",
+              "heart": 1,
+              "stock": 0,
+              "reply": "I thought you'd never ask"
+            },
+            {
+              "text": "Promote her on the spot",
+              "heart": 1,
+              "stock": -1,
+              "reply": "I… accept? but HR is going to have questions"
+            },
+            {
+              "text": "\"Send me a follow-up email.\"",
+              "heart": -1,
+              "stock": 1,
+              "reply": "I'm going to cc HR."
+            },
+            {
+              "text": "Offer your leather jacket",
+              "heart": 1,
+              "stock": 0,
+              "reply": "it's warm… and smells like ambition"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "third",

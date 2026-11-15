@@ -100,6 +100,7 @@ export default function DateSim() {
       later(1600, () => {
         setRound((r) => r + 1);
         setPicked(null);
+        setBubble(null); // clear last reply so the next round's scene line shows
         setShake({ heart: false, stock: false });
         setBusy(false);
       });
@@ -130,7 +131,10 @@ export default function DateSim() {
           </div>
         ) : (
           <div className={s.narration}>
-            {picked ? "…" : round === 0 ? `Your date with ${persona.name} begins. Make it count.` : "Your move."}
+            {picked
+              ? "…"
+              : (current?.scene ??
+                (round === 0 ? `Your date with ${persona.name} begins. Make it count.` : "Your move."))}
           </div>
         )}
         <div className={s.avatarWrap}>
