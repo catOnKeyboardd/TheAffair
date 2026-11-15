@@ -8,7 +8,7 @@ export default function BottomNav() {
   const path = usePathname();
   const { matches } = useStore();
   const unread = matches.filter((m) => m.unread).length;
-  if (path.startsWith("/chat/")) return null; // chat screen is full height
+  if (path === "/" || path.startsWith("/chat/")) return null; // swipe screen has its own top bar; chat is full height
 
   const tab = (href: string, label: string, active: boolean, badge = 0) => (
     <Link

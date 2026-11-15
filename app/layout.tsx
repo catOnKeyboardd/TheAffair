@@ -8,8 +8,8 @@ const serif = DM_Serif_Display({ variable: "--font-serif", subsets: ["latin"], w
 const sans = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TheAffair",
-  description: "The dating app designed to be deleted. By Jensen.",
+  title: "Jinge",
+  description: "Jinge: designed to be accelerated.",
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#ffffff" };

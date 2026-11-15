@@ -1,32 +1,51 @@
 "use client";
 
+// Kevin's match screen (was match.html), now a popup so app state survives.
+
 import Link from "next/link";
+import { useState } from "react";
 import type { Persona } from "@/lib/types";
+import s from "./MatchModal.module.css";
 
 export default function MatchModal({ persona, onClose }: { persona: Persona; onClose: () => void }) {
+  const [bits] = useState(() =>
+    Array.from({ length: 42 }, () => ({
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${-Math.random() * 5}s`,
+      animationDuration: `${3.5 + Math.random() * 3}s`,
+      width: `${7 + Math.random() * 9}px`,
+      height: `${12 + Math.random() * 17}px`,
+    })),
+  );
+
   return (
-    <div className="fixed inset-0 z-30 flex items-center justify-center bg-ink/90 px-6">
-      <div className="animate-pop w-full max-w-[360px] text-center text-white">
-        <p className="text-sm uppercase tracking-[0.3em] text-accent">It&apos;s a match</p>
-        <h2 className="mt-3 font-serif text-5xl leading-tight">
-          You &amp; {persona.name}
-        </h2>
-        <div className="mt-8 flex justify-center -space-x-4">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-ink bg-stone-700 font-serif text-4xl">J</div>
-          <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-ink bg-accent font-serif text-4xl">
-            {persona.name[0]}
-          </div>
-        </div>
-        <Link
-          href={`/chat/${persona.id}`}
-          onClick={onClose}
-          className="mt-10 block rounded-full bg-paper py-3 font-semibold text-ink"
-        >
+    <div className={s.scene}>
+      <div className={`${s.bubble} ${s.b1}`} />
+      <div className={`${s.bubble} ${s.b2}`} />
+      <div className={`${s.bubble} ${s.b3}`} />
+      <div className={`${s.bubble} ${s.b4}`} />
+      <div className={`${s.star} ${s.s1}`}>★</div>
+      <div className={`${s.star} ${s.s2}`}>✦</div>
+      <div className={`${s.star} ${s.s3}`}>★</div>
+      <div className={`${s.star} ${s.s4}`}>✧</div>
+
+      <div className={s.content}>
+        <h1 className={s.title}>
+          IT&apos;S A MATCH!
+          <span>♥ YOU &amp; {persona.name.toUpperCase()} ♥</span>
+        </h1>
+        <Link href={`/chat/${persona.id}`} onClick={onClose} className={s.btn}>
           Send a message
         </Link>
-        <button onClick={onClose} className="mt-3 w-full py-2 text-sm text-white/70">
-          Keep looking
+        <button onClick={onClose} className={`${s.btn} ${s.ghost}`}>
+          Keep swiping
         </button>
+      </div>
+
+      <div className={s.confetti}>
+        {bits.map((style, i) => (
+          <i key={i} style={style} />
+        ))}
       </div>
     </div>
   );

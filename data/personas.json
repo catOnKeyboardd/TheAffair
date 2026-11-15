@@ -1,20 +1,49 @@
 [
   {
+    "id": "sharon",
+    "name": "Sharon Smith",
+    "age": 28,
+    "location": "Toronto",
+    "job": "Interior designer",
+    "bio": "Hi! I'm Sharon. I love late-night walks, street photography, cozy cafes, and finding new songs.",
+    "items": [
+      { "id": "sharon-p1", "kind": "photo", "src": "/image1.jpg" },
+      { "id": "sharon-q1", "kind": "prompt", "question": "I'm looking for", "answer": "someone who can render my feelings in real time" }
+    ],
+    "backstory": "PLACEHOLDER (Kevin's test profile). Raymond replaces with a real persona.",
+    "openingLine": "hiii 👋"
+  },
+  {
+    "id": "alex",
+    "name": "Alex Morgan",
+    "age": 27,
+    "location": "Montreal",
+    "job": "Photographer",
+    "bio": "Always looking for hidden gems, good coffee, and somewhere new to explore.",
+    "items": [
+      { "id": "alex-p1", "kind": "photo", "src": "/image2.jpg" },
+      { "id": "alex-q1", "kind": "prompt", "question": "Typical Sunday", "answer": "shooting golden hour, editing till 3am" }
+    ],
+    "backstory": "PLACEHOLDER (Kevin's test profile). Raymond replaces with a real persona.",
+    "openingLine": "nice jacket 📸"
+  },
+  {
     "id": "tess",
     "name": "Tess",
     "age": 39,
     "location": "Hsinchu",
     "job": "Owns a few fabs",
+    "bio": "Booked through 2028. Serious inquiries only. Prepay preferred.",
     "items": [
       { "id": "tess-p1", "kind": "photo", "caption": "me at work (cleanroom chic)" },
       { "id": "tess-q1", "kind": "prompt", "question": "I'm looking for", "answer": "someone who commits to volume 18 months in advance" },
       { "id": "tess-p2", "kind": "photo", "caption": "3nm and thriving" },
-      { "id": "tess-q2", "kind": "prompt", "question": "A green flag I look for", "answer": "you prepay. in full." },
-      { "id": "tess-p3", "kind": "photo" },
-      { "id": "tess-q3", "kind": "prompt", "question": "We'll get along if", "answer": "you don't mention Arizona on the first date" }
+      { "id": "tess-q2", "kind": "prompt", "question": "A green flag I look for", "answer": "you prepay. in full." }
     ],
     "backstory": "PLACEHOLDER (Raymond): Tess is the most in-demand person in the industry and knows it. Busy, a little smug, flirts in lead times.",
-    "openingLine": "ok you're cute but my calendar is booked through 2028"
+    "openingLine": "ok you're cute but my calendar is booked through 2028",
+    "matchDelayMs": 4000,
+    "pendingLabel": "estimated lead time: 18 weeks"
   },
   {
     "id": "hanna",
@@ -22,12 +51,10 @@
     "age": 27,
     "location": "Icheon",
     "job": "High-bandwidth memory",
+    "bio": "Fast, stacked, a little clingy. Want to be co-packaged with someone special.",
     "items": [
       { "id": "hanna-p1", "kind": "photo", "caption": "stacked" },
-      { "id": "hanna-q1", "kind": "prompt", "question": "My most irrational fear", "answer": "being a bottleneck" },
-      { "id": "hanna-p2", "kind": "photo" },
-      { "id": "hanna-q2", "kind": "prompt", "question": "Typical Sunday", "answer": "running at 9.6 Gbps and still feeling slow" },
-      { "id": "hanna-q3", "kind": "prompt", "question": "I'll fall for you if", "answer": "you put me right next to your GPU" }
+      { "id": "hanna-q1", "kind": "prompt", "question": "My most irrational fear", "answer": "being a bottleneck" }
     ],
     "backstory": "PLACEHOLDER (Raymond): Hanna is fast, anxious about keeping up, and very clingy (wants to be co-packaged).",
     "openingLine": "omg hi. how many of me do you need?? asking for a roadmap"
