@@ -14,9 +14,10 @@ export default function Swipe() {
   const router = useRouter();
   const { seen, like, skip } = useStore();
   const [matched, setMatched] = useState<Persona | null>(null);
-  // Deck loops forever: rotate the list by how many swipes so far
-  const start = seen.length % personas.length;
-  const deck = [...personas.slice(start), ...personas.slice(0, start)];
+  // Deck loops forever. The Intern is always the last card in each pass.
+  const cycle = [...personas.filter((p) => p.id !== "third"), ...personas.filter((p) => p.id === "third")];
+  const start = seen.length % cycle.length;
+  const deck = [...cycle.slice(start), ...cycle.slice(0, start)];
 
   useEffect(() => {
     if (!matched) return;

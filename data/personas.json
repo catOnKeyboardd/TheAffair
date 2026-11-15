@@ -10,7 +10,7 @@
         "id": "wife-p1",
         "kind": "photo",
         "caption": "dinner's ready",
-        "src": "/person1.svg"
+        "src": "/wife.jpg"
       }
     ],
     "story": {
@@ -45,7 +45,7 @@
         }
       }
     },
-    "avatar": "/person1.svg",
+    "avatar": "/wife.jpg",
     "age": 59,
     "noDate": true
   },
@@ -60,7 +60,7 @@
         "id": "spy-p1",
         "kind": "photo",
         "caption": "totally normal photo",
-        "src": "/person2.jpg"
+        "src": "/alice-1.png"
       }
     ],
     "story": {
@@ -98,19 +98,11 @@
         }
       }
     },
-    "avatar": "/person2.jpg",
+    "avatar": "/alice-1.png",
     "avatarStages": [
-      {
-        "src": "/person2.jpg",
-        "filter": "grayscale(0.85) brightness(0.78) contrast(0.85) blur(0.6px)"
-      },
-      {
-        "src": "/person2.jpg"
-      },
-      {
-        "src": "/person2.jpg",
-        "filter": "saturate(1.35) brightness(1.1) contrast(1.05) drop-shadow(0 0 14px #ffd42e)"
-      }
+      { "src": "/alice-1.png" },
+      { "src": "/alice-2.png" },
+      { "src": "/alice-3.png" }
     ],
     "avatarStart": 0,
     "date": {
@@ -224,7 +216,7 @@
       {
         "id": "vp-p1",
         "kind": "photo",
-        "src": "/person3.svg"
+        "src": "/vp.jpg"
       }
     ],
     "story": {
@@ -261,7 +253,7 @@
         }
       }
     },
-    "avatar": "/person3.svg",
+    "avatar": "/vp.jpg",
     "age": 41,
     "lookingFor": "Something 1:1",
     "date": {
@@ -359,7 +351,7 @@
   },
   {
     "id": "third",
-    "name": "The Mystery 3rd",
+    "name": "The Intern",
     "location": "3rd floor, washroom-adjacent",
     "job": "???",
     "bio": "You don't know me. I know you. Your badge photo is cute.",
@@ -368,7 +360,7 @@
         "id": "third-p1",
         "kind": "photo",
         "caption": "???",
-        "src": "/person4.svg"
+        "src": "/intern.jpg"
       }
     ],
     "story": {
@@ -413,13 +405,13 @@
         }
       }
     },
-    "avatar": "/intern.svg",
+    "avatar": "/intern.jpg",
     "lookingFor": "Something discreet 🤫",
     "date": {
       "intro": "In-person coffee chat, Grace Hopper meeting room. Jensen thinks it's a secret date. It is not.",
       "rounds": [
         {
-          "scene": "☕ Coffee chat, Grace Hopper room. The Mystery 3rd sets down two oat lattes and takes off the fedora. It's… the summer intern. \"Hi!! I made a 12-slide deck on why I deserve a return offer.\"",
+          "scene": "☕ Coffee chat, Grace Hopper room. The Mystery 3rd sets down two oat lattes and takes off the fedora. It's… the summer intern. \"Hi!! I made a 12-slide deck on why I deserve the RO. Full-time. Return offer.\"",
           "options": [
             {
               "text": "\"Let's see the deck.\"",
@@ -434,10 +426,10 @@
               "reply": "my badge says 'intern (temp)'…"
             },
             {
-              "text": "Hand them a return offer on the spot",
+              "text": "Hand them the RO on the spot",
               "heart": 1,
               "stock": -1,
-              "reply": "OMG. wait, is this legal?"
+              "reply": "An actual RO?? Full-time?? Wait, is this legal?"
             },
             {
               "text": "\"Do you know who I am?\"",
@@ -477,13 +469,13 @@
           ]
         },
         {
-          "scene": "⏰ The lattes are empty. \"So… are we doing this again? Like, full-time?\"",
+          "scene": "⏰ The lattes are empty. \"So… am I getting the RO? Full-time. The return offer. That's what I came to ask for.\"",
           "options": [
             {
               "text": "\"Same time next week? Coffee's on me.\"",
               "heart": 1,
               "stock": 0,
-              "reply": "this is the best coffee chat of my life"
+              "reply": "coffee's great but I was asking about the RO"
             },
             {
               "text": "\"Talk to HR.\"",

@@ -15,7 +15,7 @@ type Store = {
 };
 
 const Ctx = createContext<Store | null>(null);
-const KEY = "jinge-state-v2";
+const KEY = "jinge-state-v3";
 const uid = () => Math.random().toString(36).slice(2, 10);
 
 const TYPING_MS = 1100; // persona "typing…" before each reply bubble
@@ -30,11 +30,13 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   // Persist so an accidental refresh mid-demo doesn't wipe everything
   useEffect(() => {
     try {
-      const s = JSON.parse(localStorage.getItem(KEY) || "null");
+      const fresh = localStorage.getItem(KEY);
+      const s = JSON.parse(fresh || localStorage.getItem("jinge-state-v2") || "null");
       if (s) {
         // a refresh mid-typing would strand a chat; resume it at "over"
         setMatches((s.matches ?? []).map((m: Match) => (m.node === null && !m.over ? { ...m, over: true } : m)));
-        setSeen(s.seen ?? []);
+        // Old saves rotated the deck onto the Intern. A new save starts at The Wife.
+        setSeen(fresh ? (s.seen ?? []) : []);
       }
     } catch {}
     setLoaded(true);
