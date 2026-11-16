@@ -2,6 +2,8 @@
 
 *Designed to be accelerated.* A dating app from Hensen's POV, simulating his many affairs. Hackathon build, 3 hours.
 
+Demo: https://youtu.be/tUfkN8cRu10
+
 Storyboard: https://www.figma.com/board/qKXHmYkcJnYtZafF2wz3Pf/Untitled?node-id=0-1&t=DWuBrzE2BFXSDZOm-1
 
 ## Run
