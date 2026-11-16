@@ -1,6 +1,6 @@
 # Jinge (by TheAffair)
 
-*Designed to be accelerated.* A dating app from Jensen's POV, simulating his many affairs. Hackathon build, 3 hours.
+*Designed to be accelerated.* A dating app from Hensen's POV, simulating his many affairs. Hackathon build, 3 hours.
 
 Storyboard: https://www.figma.com/board/qKXHmYkcJnYtZafF2wz3Pf/Untitled?node-id=0-1&t=DWuBrzE2BFXSDZOm-1
 
