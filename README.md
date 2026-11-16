@@ -1,4 +1,4 @@
-# Jinge (by TheAffair)
+# Jinge (by TheAffair) Hackathon NOV 15/2027
 
 *Designed to be accelerated.* A dating app from Hensen's POV, simulating his many affairs. Hackathon build, 3 hours.
 
